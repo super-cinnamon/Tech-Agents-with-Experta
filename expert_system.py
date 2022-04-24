@@ -31,17 +31,17 @@ class VehicleType(KnowledgeEngine):
     def Sedan(self):
         engine.retract(1)
         engine.reset()
-        print("sportscar")
+        print("Sedan")
     @Rule(AND(Facts(doors = 3), Facts(size = 'Medium'), Facts(type = 'automobile')))
     def Minivan(self):
         engine.retract(1)
         engine.reset()
-        print("sportscar")
+        print("Minivan")
     @Rule(AND(Facts(doors = 4), Facts(size = 'Large'), Facts(type = 'automobile')))
     def SUV(self):
         engine.retract(1)
         engine.reset()
-        print("sportscar")
+        print("SUV")
     
     @Rule(Facts(wheels = P(lambda nb: nb < 4)))
     def Cycle(self):
@@ -54,5 +54,5 @@ class VehicleType(KnowledgeEngine):
 
 engine =  VehicleType()
 engine.reset()
-engine.declare(Facts(wheels = 3, motor = 'yes'))
+engine.declare(Facts(wheels = 4, motor = 'yes', size = 'Medium', doors = 4))
 engine.run()
