@@ -55,7 +55,87 @@ class Symptoms(Fact):
     pass
 #rules to add and fill up
 class Diagnosis(KnowledgeEngine):
-    pass
+    @Rule()
+    def Arthritis(self):
+        pass
+    @Rule()
+    def Lupus(self):
+        pass
+    @Rule()
+    def Diarrhoea(self):
+        pass
+    @Rule()
+    def Crohns(self):
+        pass
+    @Rule()
+    def Anxiety(self):
+        pass
+    @Rule()
+    def Spesis(self):
+        pass
+    @Rule()
+    def SepticShock(self):
+        pass
+    @Rule()
+    def ChestInfection(self):
+        pass
+    @Rule()
+    def Bronchitis(self):
+        pass
+    @Rule()
+    def Pneumonia(self):
+        pass
+    @Rule()
+    def Asthma(self):
+        pass
+    @Rule()
+    def AsthmaAttack(self):
+        pass
+    @Rule()
+    def CommonCold(self):
+        pass
+    @Rule()
+    def Flu(self):
+        pass
+    @Rule()
+    def EColi(self):
+        pass
+    @Rule()
+    def Covid19(self):
+        pass
+    @Rule()
+    def Tonsilis(self):
+        pass
+    @Rule()
+    def HayFever(self):
+        pass
+    @Rule()
+    def heartFailure(self):
+        pass
+    @Rule()
+    def Amaemia(self):
+        pass
+    @Rule()
+    def Ulcer(self):
+        pass
+    @Rule()
+    def HIV(self):
+        pass
+    @Rule()
+    def KidneyInfection(self):
+        pass
+    @Rule()
+    def KidneyStones(self):
+        pass
+    @Rule()
+    def LiverDisease(self):
+        pass
+    @Rule()
+    def Measles(self):
+        pass
+    @Rule()
+    def Migraine(self):
+        pass
 
 engine =  VehicleType()
 engine.reset()
