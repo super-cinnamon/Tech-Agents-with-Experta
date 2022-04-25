@@ -173,8 +173,8 @@ class Ui(QtWidgets.QMainWindow):
         for index in range(self.listModel.rowCount()):
             fect = f'engine.declare(Facts({self.listModel.item(index).text()}))'
             exec(fect)
-            engine.run()
-            print(engine.facts)
+        engine.run()
+        print(engine.facts)
         
         
     
