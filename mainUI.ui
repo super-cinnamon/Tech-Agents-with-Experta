@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>613</width>
+    <height>529</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>613</width>
+    <height>529</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>613</width>
+    <height>529</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -19,16 +31,16 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>801</width>
-      <height>541</height>
+      <width>581</width>
+      <height>471</height>
      </rect>
     </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="Vehicles">
      <attribute name="title">
-      <string>Tab 1</string>
+      <string>Vehicles</string>
      </attribute>
      <widget class="QLabel" name="label">
       <property name="geometry">
@@ -79,8 +91,8 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>150</y>
+        <x>330</x>
+        <y>40</y>
         <width>47</width>
         <height>13</height>
        </rect>
@@ -92,8 +104,8 @@
      <widget class="QComboBox" name="motor">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>150</y>
+        <x>390</x>
+        <y>40</y>
         <width>69</width>
         <height>22</height>
        </rect>
@@ -112,8 +124,8 @@
      <widget class="QComboBox" name="size">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>200</y>
+        <x>380</x>
+        <y>90</y>
         <width>91</width>
         <height>22</height>
        </rect>
@@ -137,8 +149,8 @@
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>200</y>
+        <x>330</x>
+        <y>90</y>
         <width>47</width>
         <height>13</height>
        </rect>
@@ -150,9 +162,9 @@
      <widget class="QListView" name="listView">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>300</y>
-        <width>256</width>
+        <x>20</x>
+        <y>190</y>
+        <width>241</width>
         <height>192</height>
        </rect>
       </property>
@@ -194,8 +206,8 @@
      <widget class="QPushButton" name="addMotor">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>140</y>
+        <x>520</x>
+        <y>30</y>
         <width>31</width>
         <height>31</height>
        </rect>
@@ -211,8 +223,8 @@
      <widget class="QPushButton" name="addSize">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>190</y>
+        <x>520</x>
+        <y>80</y>
         <width>31</width>
         <height>31</height>
        </rect>
@@ -225,11 +237,547 @@
         <normaloff>button_icons/add.png</normaloff>button_icons/add.png</iconset>
       </property>
      </widget>
+     <widget class="Line" name="line_4">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>30</y>
+        <width>20</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>160</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>List of facts</string>
+      </property>
+     </widget>
+     <widget class="QListView" name="listView_3">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>200</y>
+        <width>241</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="removeVehicleFact">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>390</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>remove</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_5">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>160</y>
+        <width>20</width>
+        <height>251</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>170</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Your Vehicle(s)</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="resetFacts">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>390</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>reset</string>
+      </property>
+     </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="Diagnosis">
      <attribute name="title">
-      <string>Tab 2</string>
+      <string>Medical Diagnosis</string>
      </attribute>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Pains and aches</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="pain">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>201</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>General aches</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Join pain</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sore throat</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Muscle pain</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Headaches</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Stomach aches</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Chest pain</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Earache</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Itchy eyes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Leg swelling</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>20</y>
+        <width>20</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>20</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>visible symptoms</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="visible">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>50</y>
+        <width>201</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Paleness</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Runny nose</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Rashes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Skin redness</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Weight loss</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Eye inflamation or irritation</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Swollen skin</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Excessive sweating</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cyanosis (blue tips)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Jaundice</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bloodied feces</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="Line" name="line_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>551</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>171</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string> common internal symptoms</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="common">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>201</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Coughing</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sneezing</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Vomiting</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fatigue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Diziness</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Nausea</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Palpitations</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Trembeling or shaking</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dry mouth</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Insomnia</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Confusion</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fast breathing</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Shortness of breath</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Appetite loss</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="Line" name="line_3">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>110</y>
+        <width>20</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>120</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Temperature</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="fever">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>150</y>
+        <width>62</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <double>34.000000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>50.990000000000002</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+      <property name="value">
+       <double>36.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>153</y>
+        <width>47</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>C°</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addPain">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>40</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>button_icons/add.png</normaloff>button_icons/add.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addVisible">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>40</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>button_icons/add.png</normaloff>button_icons/add.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addCommon">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>140</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>button_icons/add.png</normaloff>button_icons/add.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addFever">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>140</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>button_icons/add.png</normaloff>button_icons/add.png</iconset>
+      </property>
+     </widget>
+     <widget class="QListView" name="symptomsList">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>551</width>
+        <height>171</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>200</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>List of Symptoms</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="removeSymptom">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>410</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Remove</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="resetSymptoms">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>410</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>reset</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -238,7 +786,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>613</width>
      <height>21</height>
     </rect>
    </property>

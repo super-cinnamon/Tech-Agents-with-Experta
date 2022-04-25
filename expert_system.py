@@ -50,7 +50,12 @@ class VehicleType(KnowledgeEngine):
     def Auto(self):
         engine.duplicate(engine.facts[1], type = 'automobile')
 
-
+#our own system
+class Symptoms(Fact):
+    pass
+#rules to add and fill up
+class Diagnosis(KnowledgeEngine):
+    pass
 
 engine =  VehicleType()
 engine.reset()
