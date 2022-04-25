@@ -55,72 +55,72 @@ class Symptoms(Fact):
     pass
 #rules to add and fill up
 class Diagnosis(KnowledgeEngine):
-    @Rule()
+    @Rule(Symptoms(joint_pain = True))
     def Arthritis(self):
-        pass
-    @Rule()
+        print("arthritis")
+    @Rule(Symptoms(arthritis = True), Symptoms(Fatigue = True), Symptoms(rashes = True))
     def Lupus(self):
-        pass
-    @Rule()
+        print("lupus")
+    @Rule(Symptoms(stomachache = True), Symptoms(nausea = True), Symptoms(headache = True), Symptoms(appetite_loss = True), Symptoms(vomiting = True))
     def Diarrhoea(self):
-        pass
-    @Rule()
+        print("diarrhoea")
+    @Rule(Symptoms(diarrhoea = True), Symptoms(fatigue = True), Symptoms(weight_loss = True), Symptoms(bloodied_feces = True))
     def Crohns(self):
-        pass
-    @Rule()
+        print("crohn's disease")
+    @Rule(Symptoms(diziness = True), Symptoms(fatigue = True), Symptoms(shortness_of_breath = True), Symptoms(trembeling_or_shaking = True), Symptoms(headache = True), Symptoms(muscle_aches = True), Symptoms(palpitations = True), Symptoms(stomachaches = True), Symptoms(insomnia = True), Symptoms(excessive_sweating = True))
     def Anxiety(self):
-        pass
-    @Rule()
-    def Spesis(self):
-        pass
-    @Rule()
+        print("anxiety")
+    @Rule(Symptoms(paleness = True), Symptoms(fast_breathing = True), Symptoms(rashes = True))
+    def Sepsis(self):
+        print("sepsis")
+    @Rule(Symptoms(diziness = True), Symptoms(diarrhoea = True), Symptoms(nausea = True), Symptoms(sepsis = True), Symptoms(vomiting = True), Symptoms(confusion = True))
     def SepticShock(self):
-        pass
-    @Rule()
+        print("septic shock")
+    @Rule(Symptoms(coughing = True), Symptoms(shortness_of_breath = True), Symptoms(fever = True), Symptoms(palpitations = True), Symptoms(chest_pain = True), Symptoms(confusion = True))
     def ChestInfection(self):
-        pass
-    @Rule()
+        print("chest infection")
+    @Rule(Symptoms(sore_throat = True), Symptoms(headache = True), Symptoms(runny_nose = True), Symptoms(general_aches = True), Symptoms(fatigue = True), Symptoms(chest_infection = True))
     def Bronchitis(self):
-        pass
-    @Rule()
+        print("brochitis")
+    @Rule(Symptoms(chest_infection = True), Symptoms(sweating = True), Symptoms(excessive_sweating = True), Symptoms(appetite_loss = True), Symptoms(trembeling_or_shaking = True))
     def Pneumonia(self):
-        pass
-    @Rule()
+        print("pneumonia")
+    @Rule(Symptoms(shortness_of_breath = True), Symptoms(coughing = True), Symptoms(chest_pain = True))
     def Asthma(self):
-        pass
-    @Rule()
+        print("asthma")
+    @Rule(Symptoms(asthma = True), Symptoms(fatigue = True), Symptoms(palpitations = True), Symptoms(diziness = True), Symptoms(cyanosis = True), Symptoms(fast_breathing = True))
     def AsthmaAttack(self):
-        pass
-    @Rule()
+        print("asthma attack")
+    @Rule(Symptoms(sore_throat = True), Symptoms(runny_nose = True), Symptoms(sneezing = True), Symptoms(coughing = True))
     def CommonCold(self):
-        pass
-    @Rule()
+        print("common cold")
+    @Rule(Symptoms(fever = True), Symptoms(cough = True), Symptoms(muscle_pain = True), Symptoms(joint_pain = True), Symptoms(fatigue = True), Symptoms(headache = True), OR(Symptoms(diarroea = True), Symptoms(stomachache = True)), OR(Symptoms(nausea = True), Symptoms(vomiting = True)), Symptoms(sore_throat = True), Symptoms(sneezing = True), Symptoms(appetite_loss = True), Symptoms(insomnia = True))
     def Flu(self):
-        pass
-    @Rule()
+        print("flu")
+    @Rule(Symptoms(diarrhoea = True), Symptoms(fever = True), Symptoms(bloodied_feces = True))
     def EColi(self):
-        pass
+        print("e coli")
     @Rule()
     def Covid19(self):
         pass
-    @Rule()
-    def Tonsilis(self):
-        pass
-    @Rule()
+    @Rule(Symptoms(cough = True), Symptoms(headache = True), Symptoms(earache = True), Symptoms(fatigue = True))
+    def Tonsilitis(self):
+        print("tonsilitis")
+    @Rule(Symptoms(sneezing = True), Symptoms(runny_nose = True), Symptoms(itching = True), Symptoms(eye_inflamation_or_irritation = True), Symptoms(coughing = True))
     def HayFever(self):
-        pass
-    @Rule()
+        print("hay faver")
+    @Rule(Symptoms(shortness_of_breath = True), Symptoms(fatigue = True), Symptoms(swollen_skin = True), Symptoms(appetite_loss = True))
     def heartFailure(self):
-        pass
-    @Rule()
-    def Amaemia(self):
-        pass
-    @Rule()
+        print("heart failure")
+    @Rule(Symptoms(fatigue = True), Symptoms(shortness_of_breath = True), Symptoms(palpitations = True), Symptoms(paleness = True))
+    def Anaemia(self):
+        print("anaemia")
+    @Rule(Symptoms(stomachache = True), Symptoms(appetite_loss = True), Symptoms(weight_loss = True))
     def Ulcer(self):
-        pass
-    @Rule()
+        print("ulcer")
+    @Rule(Symptoms(fever = True), Symptoms(sore_throat = True), Symptoms(rashes = True), Symptoms(fatigue = True), Symptoms(joint_pain = True), Symptoms(muscle_pain = True), Symptoms(weight_loss = True), Symptoms(diarrhoea = True), Symptoms(excessive_sweating = True))
     def HIV(self):
-        pass
+        print("HIV")
     @Rule()
     def KidneyInfection(self):
         pass
@@ -133,8 +133,11 @@ class Diagnosis(KnowledgeEngine):
     @Rule()
     def Measles(self):
         pass
-    @Rule()
+    @Rule(Symptoms(nausea = True), Symptoms(headache = True))
     def Migraine(self):
+        pass
+    @Rule()
+    def Fever(self):
         pass
 
 engine =  VehicleType()

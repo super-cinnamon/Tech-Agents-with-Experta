@@ -1,6 +1,65 @@
 from PyQt5 import QtWidgets, uic, QtGui,QtCore
 import sys
 
+###################################   test with the expert system
+from itertools import cycle
+from experta import *
+import experta as experta
+
+class Facts(Fact):
+    pass
+
+class VehicleType(KnowledgeEngine):
+    @Rule(AND(Facts(wheels = 2), Facts(motor = 'no'), Facts(type = 'Cycle')))
+    def Bicycle(self):
+        engine.retract(1)
+        engine.reset()
+        print("bicycle")
+    @Rule(AND(Facts(wheels = 3), Facts(motor = 'no'), Facts(type = 'Cycle')))
+    def Tricycle(self):
+        engine.retract(1)
+        engine.reset()
+        print("tricycle")
+    @Rule(AND(Facts(wheels = 3), Facts(motor = 'yes'), Facts(type = 'Cycle')))
+    def MotorCycle(self):
+        engine.retract(1)
+        engine.reset()
+        print("Motorcycle")
+
+    @Rule(AND(Facts(doors = 2), Facts(size = 'Small'), Facts(type = 'automobile')))
+    def SportsCar(self):
+        engine.retract(1)
+        engine.reset()
+        print("sportscar")
+    @Rule(AND(Facts(doors = 4), Facts(size = 'Medium'), Facts(type = 'automobile')))
+    def Sedan(self):
+        engine.retract(1)
+        engine.reset()
+        print("Sedan")
+    @Rule(AND(Facts(doors = 3), Facts(size = 'Medium'), Facts(type = 'automobile')))
+    def Minivan(self):
+        engine.retract(1)
+        engine.reset()
+        print("Minivan")
+    @Rule(AND(Facts(doors = 4), Facts(size = 'Large'), Facts(type = 'automobile')))
+    def SUV(self):
+        engine.retract(1)
+        engine.reset()
+        print("SUV")
+    
+    @Rule(Facts(wheels = P(lambda nb: nb < 4)))
+    def Cycle(self):
+        engine.duplicate(engine.facts[1], type = 'Cycle')
+    @Rule(AND(Facts(wheels = 4), Facts(motor = 'yes')))
+    def Auto(self):
+        engine.duplicate(engine.facts[1], type = 'automobile')
+
+engine =  VehicleType()
+engine.reset()
+engine.declare(Facts(motor = 'yes', size = 'Medium', doors = 4))
+print("hi")
+
+
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()
@@ -30,6 +89,10 @@ class Ui(QtWidgets.QMainWindow):
         #combo boxes declatation
         self.motor =  self.findChild(QtWidgets.QComboBox, 'motor')
         self.size =  self.findChild(QtWidgets.QComboBox, 'size')
+
+        #get vehicle button
+        self.getVehicle =  self.findChild(QtWidgets.QPushButton, 'getVehicle')
+        self.getVehicle.clicked.connect(self.getVehicleClickListener)
 
         #list view declaration with its model
         self.FactListVehicles = self.findChild(QtWidgets.QListView, 'listView')
@@ -101,11 +164,18 @@ class Ui(QtWidgets.QMainWindow):
         item = QtGui.QStandardItem(f'size = {self.size.currentText()}')
         self.listModel.appendRow(item)
     def removeVehicleFactClickListener(self):
-        if len(self.FactListVehicles.selectedIndexes()) > 1:
+        if len(self.FactListVehicles.selectedIndexes()) >= 1:
             for items in reversed(sorted(self.FactListVehicles.selectedIndexes())):
                 self.listModel.takeRow(items.row()) 
     def resetFactsClickListener(self):
         self.listModel.removeRows( 0, self.listModel.rowCount() )
+    def getVehicleClickListener(self):
+        for index in range(self.listModel.rowCount()):
+            fect = f'engine.declare(Facts({self.listModel.item(index).text()}))'
+            exec(fect)
+            engine.run()
+            print(engine.facts)
+        
         
     
     ###################################### Medical diagnosis ##############################################
@@ -131,3 +201,4 @@ class Ui(QtWidgets.QMainWindow):
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
 app.exec_()
+

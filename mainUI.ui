@@ -325,6 +325,19 @@
        <string>reset</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="getVehicle">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>390</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>get vehicle</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="Diagnosis">
      <attribute name="title">
@@ -359,7 +372,7 @@
       </item>
       <item>
        <property name="text">
-        <string>Join pain</string>
+        <string>Joint pain</string>
        </property>
       </item>
       <item>
@@ -374,12 +387,12 @@
       </item>
       <item>
        <property name="text">
-        <string>Headaches</string>
+        <string>Headache</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Stomach aches</string>
+        <string>Stomachaches</string>
        </property>
       </item>
       <item>
@@ -441,6 +454,11 @@
       <item>
        <property name="text">
         <string>Paleness</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Trembeling or shaking</string>
        </property>
       </item>
       <item>
@@ -536,6 +554,11 @@
       </item>
       <item>
        <property name="text">
+        <string>Itching</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
         <string>Sneezing</string>
        </property>
       </item>
@@ -562,11 +585,6 @@
       <item>
        <property name="text">
         <string>Palpitations</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Trembeling or shaking</string>
        </property>
       </item>
       <item>
