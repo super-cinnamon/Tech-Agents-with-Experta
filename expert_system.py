@@ -2,7 +2,7 @@ from itertools import cycle
 from experta import *
 import experta as experta
 
-#global getVehicle
+global getVehicle
 getVehicle = []
 global getDiagnosis
 getDiagnosis = []
