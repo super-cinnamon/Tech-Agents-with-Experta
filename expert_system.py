@@ -2,9 +2,8 @@ from itertools import cycle
 from experta import *
 import experta as experta
 
-global getVehicle
+
 getVehicle = []
-global getDiagnosis
 getDiagnosis = []
 
 class Facts(Fact):
@@ -307,11 +306,11 @@ class Ui(QtWidgets.QMainWindow):
 				exec(fect)
 		engineV.run()
 		engineV.reset()
-		print(getVehicle)
+		self.vehicleModel.removeRows( 0, self.vehicleModel.rowCount() )
 		for element in getVehicle:
 			item = QtGui.QStandardItem(f'{element}')
 			self.vehicleModel.appendRow(item)
-		#getVehicle = [] need to reinitialize but crashes ????????
+		getVehicle.clear()
 	
 	###################################### Medical diagnosis ##############################################
 	def getPainClickListener(self):
