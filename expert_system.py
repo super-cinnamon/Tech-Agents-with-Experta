@@ -9,7 +9,7 @@ getDiagnosis = []
 class Facts(Fact):
 	pass
 
-class VehicleType(KnowledgeEngine):
+class myEngine(KnowledgeEngine):
 	@Rule(AND(Facts(wheels = 2), Facts(motor = 'no'), Facts(type = 'Cycle')))
 	def Bicycle(self):
 		engineV.retract(1)
@@ -53,6 +53,57 @@ class VehicleType(KnowledgeEngine):
 	@Rule(AND(Facts(wheels = 4), Facts(motor = 'yes')))
 	def Auto(self):
 		engineV.duplicate(engineV.facts[1], type = 'automobile')
+
+	@Rule(Facts(f_doors = P(lambda nb: nb <= 3)))
+	def FrenchFridge(self):
+		engineV.declare(Facts(french_fridge = True))
+	@Rule(Facts(hi_temp = P(lambda nb: nb <= (-18))))
+	def Freezer(self):
+		engineV.declare(Facts(type = 'Freezer'))
+	@Rule(Facts(hi_temp = P(lambda nb: nb > (-18))))
+	def Fridge(self):
+		engineV.declare(Facts(type = 'Fridge'))
+	@Rule(Facts(type = 'Fridge'), Facts(lo_temp = P(lambda nb: nb <= (-18))))
+	def HasFreezer(self):
+		engineV.declare(Facts(has_freezer = True))
+	@Rule(Facts(type = 'Fridge'), Facts(lo_temp = P(lambda nb: nb > (-18))))
+	def NoFreezer(self):
+		engineV.declare(Facts(has_freezer = False))
+	@Rule(Facts(size = 'Large'), Facts(type = 'Freezer'))
+	def ChestFreezer(self):
+		pass
+	@Rule(Facts(size = 'Small'), Facts(type = 'Freezer'))
+	def UprightFreezer(self):
+		pass
+	@Rule(Facts(size = 'Small'), Facts(f_doors = 1), Facts(has_freezer = False))
+	def MiniFridge(self):
+		pass
+	@Rule(Facts(size = 'Large'), Facts(f_doors = 2), Facts(has_freezer = True))
+	def SideBySide(self):
+		pass
+	@Rule(Facts(french_fridge = True), Facts(has_freezer = True))
+	def FrenchDoorFridge(self):
+		pass
+	@Rule(Facts(size = 'Medium'), Facts(f_doors = 2), Facts(has_freezer = True))
+	def StandardFridge(self):
+		pass
+	@Rule(Facts(size = 'Medium'), Facts(f_doors = 1), Facts(has_freezer = False))
+	def SimpleFridge(self):
+		pass
+	@Rule(Facts(french_fridge = True), Facts(features__tablet =  1))
+	def SmartFridge(self):
+		pass
+	@Rule(Facts(size = 'Extra Large'), Facts(has_freezer = False), Facts(f_doors = 2))
+	def ColumnFridge(self):
+		pass
+	@Rule(Facts(features__waterdispenser = 1))
+	def FeatureWater(self):
+		pass
+	@Rule(Facts(features__icedispenser = 1))
+	def FeatureIce(self):
+		pass
+		
+
 
 #our own system
 class Symptoms(Fact):
@@ -147,6 +198,7 @@ class Diagnosis(KnowledgeEngine):
 		engine.declare(Symptoms(fever = True))
 		print("fever")
 
+
 engine =  Diagnosis()
 engine.reset()
 engine.declare(Symptoms(temperature = 37.0))
@@ -162,7 +214,7 @@ from PyQt5 import QtWidgets, uic, QtGui
 import sys
 
 
-engineV =  VehicleType()
+engineV =  myEngine()
 engineV.reset()
 
 
