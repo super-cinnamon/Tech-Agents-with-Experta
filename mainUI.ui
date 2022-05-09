@@ -471,6 +471,11 @@
         <string>Large</string>
        </property>
       </item>
+      <item>
+       <property name="text">
+        <string>Extra Large</string>
+       </property>
+      </item>
      </widget>
      <widget class="QPushButton" name="addFsize">
       <property name="geometry">
