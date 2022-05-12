@@ -36,7 +36,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <property name="usesScrollButtons">
      <bool>false</bool>
@@ -347,6 +347,29 @@
        <string>get vehicle</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>300</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Invocated Rules</string>
+      </property>
+     </widget>
+     <widget class="QListView" name="vehicleRules">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>330</y>
+        <width>241</width>
+        <height>81</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="Refrigerators">
      <attribute name="title">
@@ -643,7 +666,7 @@
       <property name="geometry">
        <rect>
         <x>310</x>
-        <y>210</y>
+        <y>200</y>
         <width>241</width>
         <height>81</height>
        </rect>
@@ -714,7 +737,7 @@
      <widget class="QLabel" name="label_22">
       <property name="geometry">
        <rect>
-        <x>320</x>
+        <x>310</x>
         <y>170</y>
         <width>91</width>
         <height>16</height>
@@ -739,6 +762,29 @@
       <property name="icon">
        <iconset>
         <normaloff>button_icons/add.png</normaloff>button_icons/add.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>300</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Invocated Rules</string>
+      </property>
+     </widget>
+     <widget class="QListView" name="fridgeRules">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>330</y>
+        <width>241</width>
+        <height>81</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -1223,7 +1269,7 @@
         <x>300</x>
         <y>230</y>
         <width>261</width>
-        <height>191</height>
+        <height>71</height>
        </rect>
       </property>
      </widget>
@@ -1251,6 +1297,29 @@
       </property>
       <property name="text">
        <string>Diagnosis</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>310</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Invocated Rules</string>
+      </property>
+     </widget>
+     <widget class="QListView" name="diagnosisRules">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>340</y>
+        <width>261</width>
+        <height>81</height>
+       </rect>
       </property>
      </widget>
     </widget>
