@@ -5,6 +5,7 @@ import experta as experta
 getFridges = []
 getVehicle = []
 getDiagnosis = []
+invocated_rules = []
 
 class Facts(Fact):
 	pass
