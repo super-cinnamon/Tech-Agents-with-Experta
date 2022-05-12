@@ -53,7 +53,8 @@ class myEngine(KnowledgeEngine):
 	@Rule(AND(Facts(wheels = 4), Facts(motor = 'yes')))
 	def Auto(self):
 		engineV.duplicate(engineV.facts[1], type = 'automobile')
-
+################################################################################################################################
+################################################# fridge rules ########################################################
 	@Rule(Facts(f_doors = P(lambda nb: nb <= 3)))
 	def FrenchFridge(self):
 		engineV.declare(Facts(french_fridge = True))
@@ -72,39 +73,30 @@ class myEngine(KnowledgeEngine):
 	@Rule(Facts(size = 'Large'), Facts(type = 'Freezer'))
 	def ChestFreezer(self):
 		getFridges.append("Chest Freezer")
-		engineV.reset()
 	@Rule(Facts(size = 'Small'), Facts(type = 'Freezer'))
 	def UprightFreezer(self):
 		getFridges.append("Upright Freezer")
-		engineV.reset()
 	@Rule(Facts(size = 'Small'), Facts(f_doors = 1), Facts(has_freezer = False))
 	def MiniFridge(self):
 		getFridges.append("Mini Fridge")
-		engineV.reset()
 	@Rule(Facts(size = 'Large'), Facts(f_doors = 2), Facts(has_freezer = True))
 	def SideBySide(self):
 		getFridges.append("Side-By-Side Fridge")
-		engineV.reset()
 	@Rule(Facts(french_fridge = True), Facts(has_freezer = True))
 	def FrenchDoorFridge(self):
 		getFridges.append("French Doors Fridge")
-		engineV.reset()
 	@Rule(Facts(size = 'Medium'), Facts(f_doors = 2), Facts(has_freezer = True))
 	def StandardFridge(self):
 		getFridges.append("Standard Fridge")
-		engineV.reset()
 	@Rule(Facts(size = 'Medium'), Facts(f_doors = 1), Facts(has_freezer = False))
 	def SimpleFridge(self):
 		getFridges.append("Simple Fridge")
-		engineV.reset()
 	@Rule(Facts(french_fridge = True), Facts(features__tablet =  1))
 	def SmartFridge(self):
 		getFridges.append("Smart Fridge")
-		engineV.reset()
 	@Rule(Facts(size = 'Extra Large'), Facts(has_freezer = False), Facts(f_doors = 2))
 	def ColumnFridge(self):
 		getFridges.append("Column Fridge")
-		engineV.reset()
 	@Rule(Facts(features__waterdispenser = 1))
 	def FeatureWater(self):
 		pass
@@ -422,7 +414,7 @@ class Ui(QtWidgets.QMainWindow):
 			self.vehicleModel.appendRow(item)
 		getVehicle.clear()
 
-	######################################### fridge #######################################
+	################################################# fridge ####################################################
 	def getFDoorsClickListener(self):
 		item = QtGui.QStandardItem(f'f_doors={self.fDoors.value()}')
 		self.fridgeModel.appendRow(item)
