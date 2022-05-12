@@ -29,7 +29,7 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>10</y>
       <width>581</width>
       <height>471</height>
@@ -601,7 +601,7 @@
         <normaloff>button_icons/add.png</normaloff>button_icons/add.png</iconset>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="add_features">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -625,6 +625,121 @@
         <string>Ice Dispenser</string>
        </property>
       </item>
+     </widget>
+     <widget class="QPushButton" name="getFridge">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>400</y>
+        <width>81</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>get fridge</string>
+      </property>
+     </widget>
+     <widget class="QListView" name="fridges">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>210</y>
+        <width>241</width>
+        <height>81</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QListView" name="fridgeFacts">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>200</y>
+        <width>241</width>
+        <height>192</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>170</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>List of facts</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_7">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>170</y>
+        <width>20</width>
+        <height>251</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="resetFactsFridge">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>400</y>
+        <width>71</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>reset</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="removeFridgeFact">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>400</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>remove</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>170</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Fridge</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addFeatures">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>110</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>button_icons/add.png</normaloff>button_icons/add.png</iconset>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="Diagnosis">

@@ -2,7 +2,7 @@ from itertools import cycle
 from experta import *
 import experta as experta
 
-
+getFridges = []
 getVehicle = []
 getDiagnosis = []
 
@@ -71,31 +71,40 @@ class myEngine(KnowledgeEngine):
 		engineV.declare(Facts(has_freezer = False))
 	@Rule(Facts(size = 'Large'), Facts(type = 'Freezer'))
 	def ChestFreezer(self):
-		pass
+		getFridges.append("Chest Freezer")
+		engineV.reset()
 	@Rule(Facts(size = 'Small'), Facts(type = 'Freezer'))
 	def UprightFreezer(self):
-		pass
+		getFridges.append("Upright Freezer")
+		engineV.reset()
 	@Rule(Facts(size = 'Small'), Facts(f_doors = 1), Facts(has_freezer = False))
 	def MiniFridge(self):
-		pass
+		getFridges.append("Mini Fridge")
+		engineV.reset()
 	@Rule(Facts(size = 'Large'), Facts(f_doors = 2), Facts(has_freezer = True))
 	def SideBySide(self):
-		pass
+		getFridges.append("Side-By-Side Fridge")
+		engineV.reset()
 	@Rule(Facts(french_fridge = True), Facts(has_freezer = True))
 	def FrenchDoorFridge(self):
-		pass
+		getFridges.append("French Doors Fridge")
+		engineV.reset()
 	@Rule(Facts(size = 'Medium'), Facts(f_doors = 2), Facts(has_freezer = True))
 	def StandardFridge(self):
-		pass
+		getFridges.append("Standard Fridge")
+		engineV.reset()
 	@Rule(Facts(size = 'Medium'), Facts(f_doors = 1), Facts(has_freezer = False))
 	def SimpleFridge(self):
-		pass
+		getFridges.append("Simple Fridge")
+		engineV.reset()
 	@Rule(Facts(french_fridge = True), Facts(features__tablet =  1))
 	def SmartFridge(self):
-		pass
+		getFridges.append("Smart Fridge")
+		engineV.reset()
 	@Rule(Facts(size = 'Extra Large'), Facts(has_freezer = False), Facts(f_doors = 2))
 	def ColumnFridge(self):
-		pass
+		getFridges.append("Column Fridge")
+		engineV.reset()
 	@Rule(Facts(features__waterdispenser = 1))
 	def FeatureWater(self):
 		pass
@@ -105,7 +114,7 @@ class myEngine(KnowledgeEngine):
 		
 
 
-#our own system
+#our medical diagnosis system (in a separate engine)
 class Symptoms(Fact):
 	pass
 #rules to add and fill up
@@ -270,6 +279,55 @@ class Ui(QtWidgets.QMainWindow):
 		self.resetFacts =  self.findChild(QtWidgets.QPushButton, 'resetFacts')
 		self.resetFacts.clicked.connect(self.resetFactsClickListener)
 
+		####################################### fridge items ########################################
+		#spinners for temperature and number of doors
+		self.loTemp =  self.findChild(QtWidgets.QDoubleSpinBox, 'lo_temp')
+		self.hiTemp =  self.findChild(QtWidgets.QDoubleSpinBox, 'hi_temp')
+		self.fDoors =  self.findChild(QtWidgets.QSpinBox, 'f_doors')
+		
+		#size combo box
+		self.fSize =  self.findChild(QtWidgets.QComboBox, 'f_size')
+		self.addFeature =  self.findChild(QtWidgets.QComboBox, 'add_feature')
+
+		#list views and their models
+		#fact list view declaration with its model
+		self.FactListFridge = self.findChild(QtWidgets.QListView, 'fridgeFacts')
+		self.FactListFridge.setSelectionMode(QtWidgets.QAbstractItemView.MultiSelection)
+		self.fridgeModel = QtGui.QStandardItemModel()
+		self.FactListFridge.setModel(self.fridgeModel)
+
+		#vehicle result declaration
+		self.Fridges = self.findChild(QtWidgets.QListView, 'fridges')
+		self.resultsFridgeModel = QtGui.QStandardItemModel()
+		self.Fridges.setModel(self.resultsFridgeModel)
+
+		#buttons declaration
+		#add doors
+		self.addFdoors =  self.findChild(QtWidgets.QPushButton, 'addFdoors')
+		self.addFdoors.clicked.connect(self.getFDoorsClickListener)
+		#add size
+		self.addFridgeSize =  self.findChild(QtWidgets.QPushButton, 'addFsize')
+		self.addFridgeSize.clicked.connect(self.getFSizeClickListener)
+		#add low temp
+		self.addLoTemp =  self.findChild(QtWidgets.QPushButton, 'addLoTemp')
+		self.addLoTemp.clicked.connect(self.getLoTempClickListener)
+		#add high temp
+		self.addHiTemp =  self.findChild(QtWidgets.QPushButton, 'addHiTemp')
+		self.addHiTemp.clicked.connect(self.getHiTempClickListener)
+		#add additional feature
+		self.addFeatures =  self.findChild(QtWidgets.QPushButton, 'addFeatures')
+		self.addFeatures.clicked.connect(self.getFeaturesClickListener)
+		#remove from fact list
+		self.removeFFact =  self.findChild(QtWidgets.QPushButton, 'removeFridgeFact')
+		self.removeFFact.clicked.connect(self.removeFactClickListener)
+		#get fridge result
+		self.getFridge =  self.findChild(QtWidgets.QPushButton, 'getFridge')
+		self.getFridge.clicked.connect(self.getFridgeClickListener)
+		#reset fact list
+		self.resetFridgeFacts =  self.findChild(QtWidgets.QPushButton, 'resetFactsFridge')
+		self.resetFridgeFacts.clicked.connect(self.resetFridgeFactsClickListener)
+
+
 		####################################### medical diagnosis items declaration #######################################################
 		#fever spinner declaration
 		self.fever =  self.findChild(QtWidgets.QDoubleSpinBox, 'fever')
@@ -363,6 +421,49 @@ class Ui(QtWidgets.QMainWindow):
 			item = QtGui.QStandardItem(f'{element}')
 			self.vehicleModel.appendRow(item)
 		getVehicle.clear()
+
+	######################################### fridge #######################################
+	def getFDoorsClickListener(self):
+		item = QtGui.QStandardItem(f'f_doors={self.fDoors.value()}')
+		self.fridgeModel.appendRow(item)
+	def getFSizeClickListener(self):
+		item = QtGui.QStandardItem(f'size={self.fSize.currentText()}')
+		self.fridgeModel.appendRow(item)
+	def getLoTempClickListener(self):
+		item = QtGui.QStandardItem(f'lo_temp={self.loTemp.value()}')
+		self.fridgeModel.appendRow(item)
+	def getHiTempClickListener(self):
+		item = QtGui.QStandardItem(f'hi_temp={self.hiTemp.value()}')
+		self.fridgeModel.appendRow(item)
+	def getFeaturesClickListener(self):
+		string = str(self.addFeature.currentText())
+		string = string.strip()
+		string = string.lower()
+		item = QtGui.QStandardItem(f'features__{string}=1')
+		self.fridgeModel.appendRow(item)
+	def removeFactClickListener(self):
+		if len(self.FactListFridge.selectedIndexes()) >= 1:
+			for items in reversed(sorted(self.FactListFridge.selectedIndexes())):
+				self.fridgeModel.takeRow(items.row()) 
+	def getFridgeClickListener(self):
+		print("test")
+		for index in range(self.fridgeModel.rowCount()):
+			item = self.fridgeModel.item(index).text()
+			if "size" in item:
+				equals = item.index("=")
+				item = f'{item[:equals+1]}\'{item[equals+1:].strip()}\''
+			fect = f'engineV.declare(Facts({item}))'
+			print(fect)
+			exec(fect)
+		engineV.run()
+		engineV.reset()
+		self.resultsFridgeModel.removeRows( 0, self.resultsFridgeModel.rowCount() )
+		for element in getFridges:
+			item = QtGui.QStandardItem(f'{element}')
+			self.resultsFridgeModel.appendRow(item)
+		getFridges.clear()
+	def resetFridgeFactsClickListener(self):
+		self.fridgeModel.removeRows( 0, self.fridgeModel.rowCount())
 	
 	###################################### Medical diagnosis ##############################################
 	def getPainClickListener(self):
