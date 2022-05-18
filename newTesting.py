@@ -21,6 +21,7 @@ class Main_Agents(Agent):
                         msg.body = "this is the main agent"
                         await self.send(msg)
                         print("message sent")
+                        time.sleep(0.5)
                         self.set_next_state("waiting")
         class waiting(State):
                 async def run(self):
@@ -29,9 +30,11 @@ class Main_Agents(Agent):
                                 global received_main
                                 received_main = msg
                                 print(f'received the following message: {msg.body}')
+                                time.sleep(0.5)
+                                self.set_next_state("sending")
                         else:
                                 print("no message received after 10 seconds")
-                        self.set_next_state("sending")
+                        
                 
         async def setup(self):
                 fsm = self.behavior()
@@ -57,6 +60,7 @@ class Auxilary_Agents(Agent):
                         msg.body = f'the received message was: {received_aux_1.body}'
                         await self.send(msg)
                         print("message sent")
+                        time.sleep(0.5)
                         self.set_next_state("waiting")
         class waiting(State):
                 async def run(self):
@@ -65,6 +69,7 @@ class Auxilary_Agents(Agent):
                                 global received_aux_1
                                 received_aux_1 = msg
                                 print(f'received the following message: {msg.body}')
+                                time.sleep(0.5)
                                 self.set_next_state("sending")
                         else:
                                 print("no message received after 10 seconds")
