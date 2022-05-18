@@ -2,7 +2,6 @@ import time
 from spade.agent import Agent
 from spade.behaviour import FSMBehaviour, State
 from spade.message import Message
-from spade.template import Template
 
 global received_main
 global received_aux_1
