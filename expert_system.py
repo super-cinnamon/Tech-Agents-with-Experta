@@ -16,37 +16,44 @@ class myEngine(KnowledgeEngine):
 	def Bicycle(self):
 		engineV.retract(1)
 		getVehicle.append("Bicycle")
+		invocated_rules.append("if wheels = 2 and motor = no and type = Cycle then Bicycle")
 		engineV.reset()
 	@Rule(AND(Facts(wheels = 3), Facts(motor = 'no'), Facts(type = 'Cycle')))
 	def Tricycle(self):
 		engineV.retract(1)
 		getVehicle.append("Tricycle")
+		invocated_rules.append("if wheels = 3 and motor = no and type = Cycle then Tricycle")
 		engineV.reset()
 	@Rule(AND(Facts(wheels = 3), Facts(motor = 'yes'), Facts(type = 'Cycle')))
 	def MotorCycle(self):
 		engineV.retract(1)
 		getVehicle.append("Motorcycle")
+		invocated_rules.append("if wheels = 3 and motor = yes and type = Cycle then Motorcycle")
 		engineV.reset()
 
 	@Rule(AND(Facts(doors = 2), Facts(size = 'Small'), Facts(type = 'automobile')))
 	def SportsCar(self):
 		engineV.retract(1)
 		getVehicle.append("Sports Car")
+		invocated_rules.append("if doors = 2 and size = Small and type = automobile then Sports Car")
 		engineV.reset()
 	@Rule(AND(Facts(doors = 4), Facts(size = 'Medium'), Facts(type = 'automobile')))
 	def Sedan(self):
 		engineV.retract(1)
 		getVehicle.append("Sedan")
+		invocated_rules.append("if doors = 4 and size = Medium and type = automobile then Sedan")
 		engineV.reset()
 	@Rule(AND(Facts(doors = 3), Facts(size = 'Medium'), Facts(type = 'automobile')))
 	def Minivan(self):
 		engineV.retract(1)
 		getVehicle.append("Minivan")
+		invocated_rules.append("if doors = 3 and size = Medium and type = automobile then Minivan")
 		engineV.reset()
 	@Rule(AND(Facts(doors = 4), Facts(size = 'Large'), Facts(type = 'automobile')))
 	def SUV(self):
 		engineV.retract(1)
 		getVehicle.append("SUV")
+		invocated_rules.append("if doors = 4 and size = Large and type = automobile then SUV")
 		engineV.reset()
 	
 	@Rule(Facts(wheels = P(lambda nb: nb < 4)))
@@ -84,7 +91,7 @@ class myEngine(KnowledgeEngine):
 	@Rule(Facts(size = 'Large'), Facts(f_doors = 2), Facts(has_freezer = True))
 	def SideBySide(self):
 		getFridges.append("Side-By-Side Fridge")
-	@Rule(Facts(french_fridge = True), Facts(has_freezer = True))
+	@Rule(Facts(size = 'Large'), Facts(french_fridge = True), Facts(has_freezer = True))
 	def FrenchDoorFridge(self):
 		getFridges.append("French Doors Fridge")
 	@Rule(Facts(size = 'Medium'), Facts(f_doors = 2), Facts(has_freezer = True))
@@ -93,7 +100,7 @@ class myEngine(KnowledgeEngine):
 	@Rule(Facts(size = 'Medium'), Facts(f_doors = 1), Facts(has_freezer = False))
 	def SimpleFridge(self):
 		getFridges.append("Simple Fridge")
-	@Rule(Facts(french_fridge = True), Facts(features__tablet =  1), Facts(has_freezer = True))
+	@Rule(Facts(size = 'Large'),Facts(french_fridge = True), Facts(features__tablet =  1), Facts(has_freezer = True))
 	def SmartFridge(self):
 		getFridges.append("Smart Fridge")
 	@Rule(Facts(size = 'Extra Large'), Facts(has_freezer = False), Facts(f_doors = 2))
@@ -269,6 +276,11 @@ class Ui(QtWidgets.QMainWindow):
 		self.vehicleModel = QtGui.QStandardItemModel()
 		self.Vehicle.setModel(self.vehicleModel)
 
+		#invocated rules
+		self.VehicleRules = self.findChild(QtWidgets.QListView, 'vehicleRules')
+		self.vehicleRulesModel = QtGui.QStandardItemModel()
+		self.VehicleRules.setModel(self.vehicleRulesModel)
+
 		#remove from fact list button 
 		self.removeVehicleFact =  self.findChild(QtWidgets.QPushButton, 'removeVehicleFact')
 		self.removeVehicleFact.clicked.connect(self.removeVehicleFactClickListener)
@@ -417,6 +429,11 @@ class Ui(QtWidgets.QMainWindow):
 		for element in getVehicle:
 			item = QtGui.QStandardItem(f'{element}')
 			self.vehicleModel.appendRow(item)
+		self.vehicleRulesModel.removeRows( 0, self.vehicleRulesModel.rowCount() )
+		for element in invocated_rules:
+			item = QtGui.QStandardItem(f'{element}')
+			self.vehicleRulesModel.appendRow(item)
+		invocated_rules.clear()
 		getVehicle.clear()
 
 	################################################# fridge ####################################################
