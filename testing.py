@@ -4,13 +4,13 @@ import pprint
 
 pp = pprint.PrettyPrinter(indent=4)
 
-file = open("test.json")
+file = open("magasin1.json")
 
 data = json.load(file)
 
+
 pp.pprint(data)
-print(type(data['array']))
-print(type(data['object']))
+pp.pprint(data["2"])
 
 
 ######################################################################################################################

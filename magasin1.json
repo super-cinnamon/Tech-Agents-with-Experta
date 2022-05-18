@@ -1,0 +1,182 @@
+{
+    "1":{
+    "name": "LG 655L Pure N Fresh Side by Side Fridge",
+    "type": "side by side",
+    "brand": "LG",
+    "size": "large",
+    "color": "White",
+    "price": 261864,
+    "number of doors": 2,
+    "features": [
+      
+    ],
+    "number in stock": 12,
+    "reduction": 0
+  }
+  ,
+  
+    "2":{
+    "name": "LG 655L Pure N Fresh Side by Side Fridge",
+    "type": "side by side",
+    "brand": "LG",
+    "size": "large",
+    "color": "Matte Black",
+    "price": 261864,
+    "number of doors": 2,
+    "features": [
+      
+    ],
+    "number in stock": 12,
+    "reduction": 0}
+  ,
+  
+    "3":{
+    "name": "side by side home fridge wind cooled silver with door handles energy saving 560L double door refrigerator",
+    "type": "side by side",
+    "brand": "OEM",
+    "size": "large",
+    "color": "Silver",
+    "price": 85935,
+    "number of doors": 2,
+    "features": [
+      "compressor"
+    ],
+    "number in stock": 10,
+    "reduction": 0}
+  ,
+  
+    "4":{
+    "name": "Hisense 205L Top Mount Fridge",
+    "type": "standard fridge",
+    "brand": "Hisense",
+    "size": "medium",
+    "color": "White",
+    "price": 79381,
+    "number of doors": 2,
+    "features": [
+      
+    ],
+    "number in stock": 6,
+    "reduction": 0}
+  ,
+  
+    "5":{
+    "name": "Samsung 498L French Door Refrigeration",
+    "type": "french door fridge",
+    "brand": "Samsung",
+    "size": "large",
+    "color": "Silver",
+    "price": 232900,
+    "number of doors": 3,
+    "features": [
+      "water dispenser"
+    ],
+    "number in stock": 3,
+    "reduction": 0}
+  ,
+  
+    "6":{
+    "name": "Hisense 45L Bar Fridge",
+    "type": "mini fridge",
+    "brand": "Hisense",
+    "size": "small",
+    "color": "White",
+    "price": 36267,
+    "number of doors": 1,
+    "features": [
+      
+    ],
+    "number in stock":8,
+    "reduction": 0}
+  ,
+  
+    "7":{
+    "name": "Hisense 125L Bar Fridge",
+    "type": "mini fridge",
+    "brand": "Hisense",
+    "size": "small",
+    "color": "Black",
+    "price": 50833,
+    "number of doors": 1,
+    "features": [
+      
+    ],
+    "number in stock":6,
+    "reduction": 0}
+  ,
+  
+    "8":{
+    "name": "Hisense 125L Bar Fridge",
+    "type": "mini fridge",
+    "brand": "Hisense",
+    "size": "small",
+    "color": "White",
+    "price": 50833,
+    "number of doors": 1,
+    "features": [
+      
+    ],
+    "number in stock":4,
+    "reduction": 0}
+  ,
+  
+    "9":{
+    "name": "Westinghouse 466L Single Door Fridge",
+    "type": "simple fridge",
+    "brand": "Westinghouse",
+    "size": "medium",
+    "color": "Silver",
+    "price": 291162,
+    "number of doors":1,
+    "features": [
+      
+    ],
+    "number in stock":5,
+    "reduction": 0}
+  ,
+  
+    "10":{
+    "name": "Westinghouse 243L Single Door Fridge",
+    "type": "simple fridge",
+    "brand": "Westinghouse",
+    "size": "medium",
+    "color": "White",
+    "price": 160073,
+    "number of doors": 1,
+    "features": [
+      
+    ],
+    "number in stock":7,
+    "reduction": 0}
+  ,
+  
+    "11":{
+    "name": "Frigidaire 240324502 Frigidare Door Shelf Bin, Unit",
+    "type": "accessory",
+    "brand": "Frigidaire",
+    "size": "13 x 5 x 6.5 inches",
+    "color": "Transparent",
+    "price": 7719,
+    "number of doors": 0,
+    "features": [
+      
+    ],
+    "number in stock": 4,
+    "reduction": 0}
+  ,
+  
+    "12":{
+    "name": "Aquaport Fridge Filter for LG",
+    "type": "accessory",
+    "brand": "Aquaport",
+    "size": "NA",
+    "color": "NA",
+    "price": 11506,
+    "number of doors": 0,
+    "features": [
+      
+    ],
+    "number in stock": 2,
+    "reduction": 0}
+  
+}
