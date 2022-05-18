@@ -4,12 +4,16 @@ from spade.behaviour import FSMBehaviour, State
 from spade.message import Message
 from spade.template import Template
 
+global received_main
+global received_aux_1
+
+
 class Main_Agents(Agent):
         class behavior(FSMBehaviour):
                 async def on_start(self):
-                        print("behavior started")
+                        print("behavior main started")
                 async def on_end(self):
-                        print("behavior ended")
+                        print("behavior main ended")
         class sending(State):
                 async def run(self):
                         msg = Message(to="myagent@jix.im")
@@ -22,7 +26,8 @@ class Main_Agents(Agent):
                 async def run(self):
                         msg = await self.receive(timeout=10)
                         if msg:
-                                self.recieved = msg
+                                global received_main
+                                received_main = msg
                                 print(f'received the following message: {msg.body}')
                         else:
                                 print("no message received after 10 seconds")
@@ -42,14 +47,14 @@ class Main_Agents(Agent):
 class Auxilary_Agents(Agent):
         class behavior(FSMBehaviour):
                 async def on_start(self):
-                        print("behavior started")
+                        print("behavior aux started")
                 async def on_end(self):
-                        print("behavior ended")
+                        print("behavior aux ended")
         class sending(State):
                 async def run(self):
                         msg = Message(to="someagent@jix.im")
                         msg.set_metadata("performative", "inform")  # Set the "inform" FIPA performative
-                        msg.body = f'the received message was: {self.received}'
+                        msg.body = f'the received message was: {received_aux_1}'
                         await self.send(msg)
                         print("message sent")
                         self.set_next_state("waiting")
@@ -57,11 +62,13 @@ class Auxilary_Agents(Agent):
                 async def run(self):
                         msg = await self.receive(timeout=10)
                         if msg:
-                                self.recieved = msg
+                                global received_aux_1
+                                received_aux_1 = msg
                                 print(f'received the following message: {msg.body}')
+                                self.set_next_state("sending")
                         else:
                                 print("no message received after 10 seconds")
-                        self.set_next_state("sending")
+                        
                 
         async def setup(self):
                 fsm = self.behavior()
@@ -75,8 +82,10 @@ class Auxilary_Agents(Agent):
 
 main_agent = Main_Agents("someagent@jix.im", "techagent")
 auxilary_agent = Auxilary_Agents("myagent@jix.im", "techagent")
-auxilary_agent.start()
-main_agent.start()
+future = auxilary_agent.start()
+future.result()
+future2 = main_agent.start()
+future2.result()
 
 while main_agent.is_alive():
         try:
