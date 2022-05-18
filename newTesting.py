@@ -54,7 +54,7 @@ class Auxilary_Agents(Agent):
                 async def run(self):
                         msg = Message(to="someagent@jix.im")
                         msg.set_metadata("performative", "inform")  # Set the "inform" FIPA performative
-                        msg.body = f'the received message was: {received_aux_1}'
+                        msg.body = f'the received message was: {received_aux_1.body}'
                         await self.send(msg)
                         print("message sent")
                         self.set_next_state("waiting")
