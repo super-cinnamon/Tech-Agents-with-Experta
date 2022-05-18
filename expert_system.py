@@ -91,7 +91,7 @@ class myEngine(KnowledgeEngine):
 	@Rule(Facts(size = 'Large'), Facts(f_doors = 2), Facts(has_freezer = True))
 	def SideBySide(self):
 		getFridges.append("Side-By-Side Fridge")
-	@Rule(Facts(french_fridge = True), Facts(has_freezer = True))
+	@Rule(Facts(size = 'Large'), Facts(french_fridge = True), Facts(has_freezer = True))
 	def FrenchDoorFridge(self):
 		getFridges.append("French Doors Fridge")
 	@Rule(Facts(size = 'Medium'), Facts(f_doors = 2), Facts(has_freezer = True))
@@ -100,7 +100,7 @@ class myEngine(KnowledgeEngine):
 	@Rule(Facts(size = 'Medium'), Facts(f_doors = 1), Facts(has_freezer = False))
 	def SimpleFridge(self):
 		getFridges.append("Simple Fridge")
-	@Rule(Facts(french_fridge = True), Facts(features__tablet =  1), Facts(has_freezer = True))
+	@Rule(Facts(size = 'Large'),Facts(french_fridge = True), Facts(features__tablet =  1), Facts(has_freezer = True))
 	def SmartFridge(self):
 		getFridges.append("Smart Fridge")
 	@Rule(Facts(size = 'Extra Large'), Facts(has_freezer = False), Facts(f_doors = 2))
