@@ -152,10 +152,10 @@
   
     "11":{
     "name": "Frigidaire 240324502 Frigidare Door Shelf Bin, Unit",
-    "type": "accessory",
+    "type": "door shelf",
     "brand": "Frigidaire",
     "size": "13 x 5 x 6.5 inches",
-    "color": "Transparent",
+    "color": "Clear",
     "price": 7719,
     "number of doors": 0,
     "features": [
@@ -167,7 +167,7 @@
   
     "12":{
     "name": "Aquaport Fridge Filter for LG",
-    "type": "accessory",
+    "type": "water filter",
     "brand": "Aquaport",
     "size": "NA",
     "color": "NA",
@@ -177,6 +177,47 @@
       
     ],
     "number in stock": 2,
+    "reduction": 0 }
+  ,
+    "13":{
+      "name": "Avantco A-49R-HC 54 Solid Door Reach-In Refrigerator",
+      "type": "column fridge",
+      "brand": "Avantco",
+      "size": "extra large",
+      "color": "Silver",
+      "price": 393120,
+      "number of doors": 2,
+      "features": [
+          
+      ],
+      "number in stock": 2,
+      "reduction": 0}
+  ,
+  "14":{
+    "name": "Insignia™ - 7 Cu. Ft. Upright Freeze",
+    "type": "upright freezer",
+    "brand": "Insignia",
+    "size": "small",
+    "color": "White",
+    "price": 46463,
+    "number of doors": 1,
+    "features": [
+        
+    ],
+    "number in stock": 3,
     "reduction": 0}
-  
+  ,
+  "15":{
+    "name": "GE - 14.1 Cu. Ft. Frost-Free Upright Freezer",
+    "type": "upright freezer",
+    "brand": "GE",
+    "size": "small",
+    "color": "White",
+    "price": 117542,
+    "number of doors": 1,
+    "features": [
+        
+    ],
+    "number in stock": 6,
+    "reduction": 0}
 }
