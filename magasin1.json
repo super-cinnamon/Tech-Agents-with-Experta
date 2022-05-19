@@ -220,4 +220,18 @@
     ],
     "number in stock": 6,
     "reduction": 0}
+  ,
+  "16":{
+    "name": "LG 847L InstaView Door-In-Door French Door Fridge with Ice & Water Dispenser",
+    "type": "french door fridge",
+    "brand": "LG",
+    "size": "large",
+    "color": "Matte Black",
+    "price": 728021,
+    "number of doors": 4,
+    "features": [
+        "water dispenser","ice dispenser"
+    ],
+    "number in stock": 6,
+    "reduction": 0}
 }

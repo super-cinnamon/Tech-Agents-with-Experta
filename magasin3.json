@@ -192,4 +192,18 @@
         ],
         "number in stock": 4,
         "reduction": 0}
+    ,
+    "15":{
+        "name": "Westinghouse 619L Side By Side Fridge with Water Dispenser",
+        "type": "side by side",
+        "brand": "Westinghouse",
+        "size": "large",
+        "color": "Black",
+        "price": 320504,
+        "number of doors": 2,
+        "features": [
+            "water dispenser"
+        ],
+        "number in stock": 3,
+        "reduction": 0}
 }
