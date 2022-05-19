@@ -33,8 +33,7 @@ class Main_Agents(Agent):
                                 self.set_next_state("sending")
                         else:
                                 print("no message received after 10 seconds")
-                        
-                
+                                   
         async def setup(self):
                 fsm = self.behavior()
                 fsm.add_state(name="sending", state = self.sending(), initial = True)
@@ -63,7 +62,7 @@ class Auxilary_Agents(Agent):
                         self.set_next_state("waiting")
         class waiting(State):
                 async def run(self):
-                        msg = await self.receive(timeout=10)
+                        msg = await self.receive()
                         if msg:
                                 global received_aux_1
                                 received_aux_1 = msg
@@ -72,8 +71,7 @@ class Auxilary_Agents(Agent):
                                 self.set_next_state("sending")
                         else:
                                 print("no message received after 10 seconds")
-                        
-                
+                                      
         async def setup(self):
                 fsm = self.behavior()
                 fsm.add_state(name="sending", state = self.sending())

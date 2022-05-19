@@ -219,7 +219,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>0</string>
     </property>
    </widget>
    <widget class="QLabel" name="max_price_label">
@@ -232,7 +232,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>0</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">
@@ -257,6 +257,21 @@
       <height>22</height>
      </rect>
     </property>
+    <item>
+     <property name="text">
+      <string>Tablet</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ice Dispenser</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Water Dispenser</string>
+     </property>
+    </item>
    </widget>
    <widget class="QListView" name="facts_list">
     <property name="geometry">
@@ -508,7 +523,7 @@
       <normaloff>button_icons/add.png</normaloff>button_icons/add.png</iconset>
     </property>
    </widget>
-   <widget class="QPushButton" name="add_min_tem">
+   <widget class="QPushButton" name="add_min_temp">
     <property name="geometry">
      <rect>
       <x>260</x>
