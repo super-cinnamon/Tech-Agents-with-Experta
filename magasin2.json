@@ -138,4 +138,47 @@
         "number in stock" : 8,
         "reduction" : 0
     }
+    ,
+    "11":{
+        "name" : "LG 637L French Door Fridge with InstaView Door-In-Door",
+        "type" : "french door fridge",
+        "brand" : "LG",
+        "size" : "large",
+        "color" : "Matte Black",
+        "price" : 684879,
+        "number of doors": 4,
+        "features" : [
+            "water dispenser","ice dispenser"
+        ],
+        "number in stock" : 8,
+        "reduction" : 0
+    }
+    ,
+    "12":{
+        "name" : "LG 637L French Door Fridge with Slim In-Door Icemaker",
+        "type" : "french door fridge",
+        "brand" : "LG",
+        "size" : "large",
+        "color" : "Matte Black",
+        "price" : 566676,
+        "number of doors": 4,
+        "features" : [
+            "water dispenser","ice dispenser"
+        ],
+        "number in stock" : 6,
+        "reduction" : 0
+    },
+    "13":{
+        "name": "Hisense 578L Side By Side Fridge with Water Dispenser",
+        "type": "side by side",
+        "brand": "Hisense",
+        "size": "large",
+        "color": "Silver",
+        "price": 203029,
+        "number of doors": 2,
+        "features": [
+            "water dispenser"
+        ],
+        "number in stock": 2,
+        "reduction": 0}
 }
