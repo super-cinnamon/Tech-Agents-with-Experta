@@ -83,26 +83,6 @@
      </property>
     </item>
    </widget>
-   <widget class="QDoubleSpinBox" name="max_temp_spinner">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>90</y>
-      <width>71</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="min_temp_spinner">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>130</y>
-      <width>71</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QSpinBox" name="spinner_door">
     <property name="geometry">
      <rect>
@@ -459,39 +439,39 @@
      </rect>
     </property>
     <item>
-      <property name="text">
+     <property name="text">
       <string>door shelf</string>
-      </property>
+     </property>
     </item>
     <item>
-      <property name="text">
+     <property name="text">
       <string>water filter</string>
-      </property>
+     </property>
     </item>
     <item>
-      <property name="text">
+     <property name="text">
       <string>air filter</string>
-      </property>
+     </property>
     </item>
     <item>
-      <property name="text">
+     <property name="text">
       <string>egg tray</string>
-      </property>
+     </property>
     </item>
     <item>
-      <property name="text">
+     <property name="text">
       <string>ice maker</string>
-      </property>
+     </property>
     </item>
     <item>
-      <property name="text">
+     <property name="text">
       <string>water valve</string>
-      </property>
+     </property>
     </item>
     <item>
-      <property name="text">
+     <property name="text">
       <string>fridge drawer</string>
-      </property>
+     </property>
     </item>
    </widget>
    <widget class="QLabel" name="label_12">
@@ -661,6 +641,53 @@
       <width>281</width>
       <height>121</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="max_temp_spinner">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>90</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <double>-20.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>15.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.100000000000000</double>
+    </property>
+    <property name="value">
+     <double>1.500000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="min_temp_spinner">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>130</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="decimals">
+     <number>2</number>
+    </property>
+    <property name="minimum">
+     <double>-100.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>4.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.100000000000000</double>
+    </property>
+    <property name="value">
+     <double>-18.000000000000000</double>
     </property>
    </widget>
   </widget>
