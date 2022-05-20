@@ -29,8 +29,7 @@ magasin_3_dict = json.load(magasin_3)
 
 getFridges = []
 fridge_features = []
-getVehicle = []
-getDiagnosis = []
+additional_features = []
 invocated_rules = []
 
 class Facts(Fact):
@@ -162,8 +161,11 @@ class Ui(QtWidgets.QMainWindow):
 		#recommendation table
 		self.shop_results = self.findChild(QtWidgets.QTableView, 'shop_results')
 		self.shop_results_model = QtGui.QStandardItemModel()
+		global shop
 		self.shop_results_model.setHorizontalHeaderLabels(['ID', 'Name', 'color', 'price', 'quantity'])
+		self.shop_results.setSelectionMode(QtWidgets.QAbstractItemView.MultiSelection)
 		self.shop_results.setModel(self.shop_results_model)
+		shop = self.shop_results_model
 
 		#cart table
 		self.cart = self.findChild(QtWidgets.QTableView, 'cart')
@@ -261,12 +263,15 @@ class Ui(QtWidgets.QMainWindow):
 	def searchFactsClickListener(self):
 		for index in range(self.facts_list_model.rowCount()):
 			item = self.facts_list_model.item(index).text()
-			if "price" not in item or "accessory" not in item:
+			if "price" not in item and "accessories" not in item:
 				if "size" in item:
 					equals = item.index("=")
 					item = f'{item[:equals+1]}\'{item[equals+1:].strip()}\''
 				fect = f'engineV.declare(Facts({item}))'
-				exec(fect)			
+				exec(fect)
+			if "accessories" in item:
+				additional_features.append(item[item.index("=")+1:])
+
 		engineV.run()
 		engineV.reset()
 		self.reco_results_model.removeRows( 0, self.reco_results_model.rowCount() )
@@ -281,7 +286,7 @@ class Ui(QtWidgets.QMainWindow):
 		fridge_features.clear()
 
 		global test
-		test = ''.join(getFridges)
+		test = ', '.join(getFridges)
 		test = test.lower()
 		getFridges.clear()  #clear at the end
 
@@ -291,8 +296,6 @@ class Ui(QtWidgets.QMainWindow):
 		
 		future2 = main_agent.start()
 		future2.result()
-		
-
 		
 	def resetCartClickListener(self):
 		self.cart.removeRows( 0, self.cart.rowCount() )
@@ -309,7 +312,11 @@ class Ui(QtWidgets.QMainWindow):
 			for items in reversed(sorted(self.cart.selectedIndexes())):
 				self.cart_model.takeRow(items.row()) 
 	def addToCartClickListener(self):
-		pass
+		if len(self.shop_results.selectedIndexes()) >= 1:
+			for items in reversed(sorted(self.shop_results.selectedIndexes())):
+				print(items)
+				self.cart_model.appendRow(QtGui.QStandardItem(items.row()))
+		
 		
 ##############################################################################################################################
 ################################ AGENTS
@@ -339,7 +346,13 @@ class Ui(QtWidgets.QMainWindow):
 					received_main = msg
 					print(f'received the following message: {msg.body}')
 					time.sleep(0.5)
-					
+					results = msg.body.split(", ")
+					for each in results:
+						current = each.split("; ")
+						row = []
+						for element in current:
+							row.append(QtGui.QStandardItem(element))
+						shop.appendRow(row)
 					self.set_next_state("final_state")
 				else:
 					print("no message received after 10 seconds")
@@ -385,13 +398,24 @@ class Ui(QtWidgets.QMainWindow):
 					print(f'received the following message: {msg.body}')
 					for element in magasin_1_dict.keys():
 						if magasin_1_dict[element]["type"] == msg.body.lower():
-							from_aux_to_main+=f'{magasin_1_dict[element]["name"]}, '
+							from_aux_to_main+=f'{element}; {magasin_1_dict[element]["name"]}; {magasin_1_dict[element]["color"]}; {magasin_1_dict[element]["price"]}; {magasin_1_dict[element]["number in stock"]}, '
 					for element in magasin_2_dict.keys():
 						if magasin_2_dict[element]["type"] == msg.body.lower():
-							from_aux_to_main+=f'{magasin_2_dict[element]["name"]}, '
+							from_aux_to_main+=f'{element}; {magasin_2_dict[element]["name"]}; {magasin_2_dict[element]["color"]}; {magasin_2_dict[element]["price"]}; {magasin_2_dict[element]["number in stock"]}, '
 					for element in magasin_3_dict.keys():
 						if magasin_3_dict[element]["type"] == msg.body.lower():
-							from_aux_to_main+=f'{magasin_3_dict[element]["name"]}, '
+							from_aux_to_main+=f'{element}; {magasin_3_dict[element]["name"]}; {magasin_3_dict[element]["color"]}; {magasin_3_dict[element]["price"]}; {magasin_3_dict[element]["number in stock"]}, '
+					for each in additional_features:
+						for element in magasin_1_dict.keys():
+							if magasin_1_dict[element]["type"] == each.lower():
+								from_aux_to_main+=f'{element}; {magasin_1_dict[element]["name"]}; {magasin_1_dict[element]["color"]}; {magasin_1_dict[element]["price"]}; {magasin_1_dict[element]["number in stock"]}, '
+						for element in magasin_2_dict.keys():
+							if magasin_2_dict[element]["type"] == each.lower():
+								from_aux_to_main+=f'{element}; {magasin_2_dict[element]["name"]}; {magasin_2_dict[element]["color"]}; {magasin_2_dict[element]["price"]}; {magasin_2_dict[element]["number in stock"]}, '
+						for element in magasin_3_dict.keys():
+							if magasin_3_dict[element]["type"] == each.lower():
+								from_aux_to_main+=f'{element}; {magasin_3_dict[element]["name"]}; {magasin_3_dict[element]["color"]}; {magasin_3_dict[element]["price"]}; {magasin_3_dict[element]["number in stock"]}, '
+
 					global received_aux_1
 					received_aux_1 = from_aux_to_main
 					time.sleep(0.5)
