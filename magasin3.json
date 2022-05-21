@@ -99,7 +99,7 @@
         "reduction": 0},
     "8":{
         "name": "Frigidaire FRIGCOMBO ULTRAWF Water Filter & PAULTRA Air Filter Combo Pack",
-        "type": ["water filter","air filter"],
+        "type": "water filter",
         "brand": "Frigidaire",
         "size": "11.75 x 4.25 x 7.25 inches",
         "color": "NA",
@@ -180,7 +180,7 @@
         "reduction": 0}
     ,
     "14":{
-        "name": "Frigidaire 240324502 Frigidare Door Shelf Bin, Unit",
+        "name": "Frigidaire 240324502 Frigidare Door Shelf Bin Unit",
         "type": "door shelf",
         "brand": "Frigidaire",
         "size": "13 x 5 x 6.5 inches",

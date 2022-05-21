@@ -1,6 +1,6 @@
 from cgi import test
 from unicodedata import name
-from PyQt5 import QtWidgets, uic, QtGui,QtCore
+from PyQt5 import QtWidgets, uic, QtGui, QtCore
 import sys
 
 ###################################   test with the expert system
@@ -96,6 +96,55 @@ engineV.reset()
 		
 #################################################################################################################################
 ############################################### G U I ###########################################################################
+class Second(QtWidgets.QDialog):
+	def __init__(self):
+		super(Second, self).__init__()
+		uic.loadUi('receipt.ui', self)
+
+		self.receipt = self.findChild(QtWidgets.QTableView, 'receipt')
+		self.receipt_model = QtGui.QStandardItemModel()
+		self.receipt_model.setHorizontalHeaderLabels(['ID', 'Name', 'color', 'price', 'quantity','shop'])
+		self.receipt.setModel(self.receipt_model)
+
+		self.buy =  self.findChild(QtWidgets.QPushButton, 'validate_purchase')
+		self.buy.clicked.connect(self.buyClickListener)
+
+		self.cancel_purchase =  self.findChild(QtWidgets.QPushButton, 'cancel_purchase')
+		self.cancel_purchase.clicked.connect(self.cancelClickListener)
+
+		self.total =  self.findChild(QtWidgets.QPlainTextEdit, 'total')
+
+	def buyClickListener():
+		pass
+
+	def cancelClickListener(self):
+		pass
+
+	def fillTable(self):
+		items = []
+		for row in range(cart_purchase.rowCount(cart.rootIndex())):
+			items.append(cart_purchase.index(row, 0, cart.rootIndex())) # for column 0
+		rows = sorted(set(index.row() for index in items))
+		for row in rows:
+			produit=[]
+			idIndex=cart.model().index(row, 0)
+			nameIndex = cart.model().index(row, 1)
+			priceIndex=cart.model().index(row, 3)
+			id=cart.model().data(idIndex)
+			Name = cart.model().data(nameIndex)
+			price=cart.model().data(priceIndex)
+			print('name is ',Name,' price is ',price)
+			produit.append(id)
+			produit.append(Name)
+			produit.append(cart.model().data(cart.model().index(row,2)))
+			produit.append(price)
+			produit.append(cart.model().data(cart.model().index(row,4)))
+			produit.append(cart.model().data(cart.model().index(row,5)))
+			selectedProducts=[]
+			for element in produit:
+				selectedProducts.append(QtGui.QStandardItem(element))
+			self.receipt_model.appendRow(selectedProducts)
+		
 
 class Ui(QtWidgets.QMainWindow):
 	def __init__(self):
@@ -160,19 +209,25 @@ class Ui(QtWidgets.QMainWindow):
 
 		############# Tables
 		#recommendation table
+		global shop_res
 		self.shop_results = self.findChild(QtWidgets.QTableView, 'shop_results')
 		self.shop_results_model = QtGui.QStandardItemModel()
 		global shop
-		self.shop_results_model.setHorizontalHeaderLabels(['ID', 'Name', 'color', 'price', 'quantity'])
+		self.shop_results_model.setHorizontalHeaderLabels(['ID', 'Name', 'color', 'price', 'quantity','shop'])
 		self.shop_results.setSelectionMode(QtWidgets.QAbstractItemView.MultiSelection)
 		self.shop_results.setModel(self.shop_results_model)
 		shop = self.shop_results_model
+		shop_res = self.shop_results
 
 		#cart table
+		global cart_purchase
+		global cart
 		self.cart = self.findChild(QtWidgets.QTableView, 'cart')
 		self.cart_model = QtGui.QStandardItemModel()
-		self.cart_model.setHorizontalHeaderLabels(['Name', 'price'])
+		self.cart_model.setHorizontalHeaderLabels(['ID', 'Name', 'color', 'price', 'quantity','shop'])
 		self.cart.setModel(self.cart_model)
+		cart_purchase = self.cart_model
+		cart = self.cart
 
 		#sliders and their labels
 		#min price
@@ -262,6 +317,7 @@ class Ui(QtWidgets.QMainWindow):
 		self.facts_list_model.removeRows( 0, self.facts_list_model.rowCount() )
 		
 	def searchFactsClickListener(self):
+		self.shop_results_model.removeRows(0, self.shop_results_model.rowCount() )
 		for index in range(self.facts_list_model.rowCount()):
 			item = self.facts_list_model.item(index).text()
 			if "price" not in item and "accessories" not in item:
@@ -299,7 +355,7 @@ class Ui(QtWidgets.QMainWindow):
 		future2.result()
 		
 	def resetCartClickListener(self):
-		self.cart.removeRows( 0, self.cart.rowCount() )
+		self.cart_model.removeRows( 0, self.cart_model.rowCount() )
 		
 	def removeFactClickListener(self):
 		if len(self.facts_list.selectedIndexes()) >= 1:
@@ -307,7 +363,9 @@ class Ui(QtWidgets.QMainWindow):
 				self.facts_list_model.takeRow(items.row()) 
 		
 	def purchaseClickListener(self):
-		pass
+		self.receipt = Second()
+		self.receipt.fillTable()
+		self.receipt.show()
 	def removeFromCartClickListener(self):
 		if len(self.cart.selectedIndexes()) >= 1:
 			for items in reversed(sorted(self.cart.selectedIndexes())):
@@ -326,8 +384,14 @@ class Ui(QtWidgets.QMainWindow):
 				Name = self.shop_results.model().data(nameIndex)
 				price=self.shop_results.model().data(priceIndex)
 				print('name is ',Name,' price is ',price)
+				produit.append(id)
 				produit.append(Name)
+				#color
+				produit.append(self.shop_results.model().data(self.shop_results.model().index(row,2)))
 				produit.append(price)
+				#quantity
+				produit.append(self.shop_results.model().data(self.shop_results.model().index(row,4)))
+				produit.append(self.shop_results.model().data(self.shop_results.model().index(row,5)))
 				selectedProducts=[]
 				for element in produit:
 					selectedProducts.append(QtGui.QStandardItem(element))
@@ -366,8 +430,10 @@ class Ui(QtWidgets.QMainWindow):
 						current = each.split("; ")
 						row = []
 						for element in current:
-							row.append(QtGui.QStandardItem(element))
+							if element != "":
+								row.append(QtGui.QStandardItem(element))
 						shop.appendRow(row)
+					shop.removeRow(shop.rowCount()-1)
 					self.set_next_state("final_state")
 				else:
 					print("no message received after 10 seconds")
@@ -413,23 +479,24 @@ class Ui(QtWidgets.QMainWindow):
 					print(f'received the following message: {msg.body}')
 					for element in magasin_1_dict.keys():
 						if magasin_1_dict[element]["type"] == msg.body.lower():
-							from_aux_to_main+=f'{element}; {magasin_1_dict[element]["name"]}; {magasin_1_dict[element]["color"]}; {magasin_1_dict[element]["price"]}; {magasin_1_dict[element]["number in stock"]}, '
+							from_aux_to_main+=f'{element}; {magasin_1_dict[element]["name"]}; {magasin_1_dict[element]["color"]}; {magasin_1_dict[element]["price"]}; {magasin_1_dict[element]["number in stock"]}; 1, '
 					for element in magasin_2_dict.keys():
 						if magasin_2_dict[element]["type"] == msg.body.lower():
-							from_aux_to_main+=f'{element}; {magasin_2_dict[element]["name"]}; {magasin_2_dict[element]["color"]}; {magasin_2_dict[element]["price"]}; {magasin_2_dict[element]["number in stock"]}, '
+							from_aux_to_main+=f'{element}; {magasin_2_dict[element]["name"]}; {magasin_2_dict[element]["color"]}; {magasin_2_dict[element]["price"]}; {magasin_2_dict[element]["number in stock"]}; 2, '
 					for element in magasin_3_dict.keys():
 						if magasin_3_dict[element]["type"] == msg.body.lower():
-							from_aux_to_main+=f'{element}; {magasin_3_dict[element]["name"]}; {magasin_3_dict[element]["color"]}; {magasin_3_dict[element]["price"]}; {magasin_3_dict[element]["number in stock"]}, '
+							from_aux_to_main+=f'{element}; {magasin_3_dict[element]["name"]}; {magasin_3_dict[element]["color"]}; {magasin_3_dict[element]["price"]}; {magasin_3_dict[element]["number in stock"]}; 3, '
 					for each in additional_features:
 						for element in magasin_1_dict.keys():
 							if magasin_1_dict[element]["type"] == each.lower():
-								from_aux_to_main+=f'{element}; {magasin_1_dict[element]["name"]}; {magasin_1_dict[element]["color"]}; {magasin_1_dict[element]["price"]}; {magasin_1_dict[element]["number in stock"]}, '
+								from_aux_to_main+=f'{element}; {magasin_1_dict[element]["name"]}; {magasin_1_dict[element]["color"]}; {magasin_1_dict[element]["price"]}; {magasin_1_dict[element]["number in stock"]}; 1, '
 						for element in magasin_2_dict.keys():
 							if magasin_2_dict[element]["type"] == each.lower():
-								from_aux_to_main+=f'{element}; {magasin_2_dict[element]["name"]}; {magasin_2_dict[element]["color"]}; {magasin_2_dict[element]["price"]}; {magasin_2_dict[element]["number in stock"]}, '
+								from_aux_to_main+=f'{element}; {magasin_2_dict[element]["name"]}; {magasin_2_dict[element]["color"]}; {magasin_2_dict[element]["price"]}; {magasin_2_dict[element]["number in stock"]}; 2, '
 						for element in magasin_3_dict.keys():
 							if magasin_3_dict[element]["type"] == each.lower():
-								from_aux_to_main+=f'{element}; {magasin_3_dict[element]["name"]}; {magasin_3_dict[element]["color"]}; {magasin_3_dict[element]["price"]}; {magasin_3_dict[element]["number in stock"]}, '
+								from_aux_to_main+=f'{element}; {magasin_3_dict[element]["name"]}; {magasin_3_dict[element]["color"]}; {magasin_3_dict[element]["price"]}; {magasin_3_dict[element]["number in stock"]}; 3, '
+						
 
 					global received_aux_1
 					received_aux_1 = from_aux_to_main

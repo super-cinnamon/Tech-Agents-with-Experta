@@ -450,11 +450,6 @@
     </item>
     <item>
      <property name="text">
-      <string>air filter</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
       <string>egg tray</string>
      </property>
     </item>
