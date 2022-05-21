@@ -67,27 +67,35 @@ class myEngine(KnowledgeEngine):
 	@Rule(Facts(f_doors = P(lambda nb: nb <= 3)))
 	def FrenchFridge(self):
 		engineV.declare(Facts(french_fridge = True))
+		invocated_rules.append("if doors <= 3")
 	@Rule(Facts(hi_temp = P(lambda nb: nb <= (-18))))
 	def Freezer(self):
 		engineV.declare(Facts(type = 'Freezer'))
+		invocated_rules.append("if high temperature <= -18")
 	@Rule(Facts(hi_temp = P(lambda nb: nb > (-18))))
 	def Fridge(self):
 		engineV.declare(Facts(type = 'Fridge'))
+		invocated_rules.append("if high temperature > -18")
 	@Rule(Facts(type = 'Fridge'), Facts(lo_temp = P(lambda nb: nb <= (-18))))
 	def HasFreezer(self):
 		engineV.declare(Facts(has_freezer = True))
+		invocated_rules.append("if low temperature <= -18")
 	@Rule(Facts(type = 'Fridge'), Facts(lo_temp = P(lambda nb: nb > (-18))))
 	def NoFreezer(self):
 		engineV.declare(Facts(has_freezer = False))
+		invocated_rules.append("if low temperature > -18")
 	@Rule(Facts(size = 'Large'), Facts(type = 'Freezer'))
 	def ChestFreezer(self):
 		getFridges.append("Chest Freezer")
+		invocated_rules.append("if size = large, type = freeze")
 	@Rule(Facts(size = 'Small'), Facts(type = 'Freezer'))
 	def UprightFreezer(self):
 		getFridges.append("Upright Freezer")
+		invocated_rules.append("if size = small, type = freeze")
 	@Rule(Facts(size = 'Small'), Facts(f_doors = 1), Facts(has_freezer = False))
 	def MiniFridge(self):
 		getFridges.append("Mini Fridge")
+		invocated_rules.append("if size = small, doors = 1, ")
 	@Rule(Facts(size = 'Large'), Facts(f_doors = 2), Facts(has_freezer = True))
 	def SideBySide(self):
 		getFridges.append("Side-By-Side Fridge")
