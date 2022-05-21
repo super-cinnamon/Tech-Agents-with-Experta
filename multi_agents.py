@@ -1,4 +1,5 @@
 from cgi import test
+from unicodedata import name
 from PyQt5 import QtWidgets, uic, QtGui,QtCore
 import sys
 
@@ -313,10 +314,24 @@ class Ui(QtWidgets.QMainWindow):
 				self.cart_model.takeRow(items.row()) 
 	def addToCartClickListener(self):
 		if len(self.shop_results.selectedIndexes()) >= 1:
-			for items in reversed(sorted(self.shop_results.selectedIndexes())):
-				print(items)
-				self.cart_model.appendRow(QtGui.QStandardItem(items.row()))
-		
+			
+			rows = sorted(set(index.row() for index in self.shop_results.selectedIndexes()))
+			for row in rows:
+				produit=[]
+				print('Row %d is selected' % row)
+				idIndex=self.shop_results.model().index(row, 0)
+				nameIndex = self.shop_results.model().index(row, 1)
+				priceIndex=self.shop_results.model().index(row, 3)
+				id=self.shop_results.model().data(idIndex)
+				Name = self.shop_results.model().data(nameIndex)
+				price=self.shop_results.model().data(priceIndex)
+				print('name is ',Name,' price is ',price)
+				produit.append(Name)
+				produit.append(price)
+				selectedProducts=[]
+				for element in produit:
+					selectedProducts.append(QtGui.QStandardItem(element))
+				self.cart_model.appendRow(selectedProducts)
 		
 ##############################################################################################################################
 ################################ AGENTS
