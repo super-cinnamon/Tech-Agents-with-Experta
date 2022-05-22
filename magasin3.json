@@ -10,7 +10,7 @@
         "features": [
           
         ],
-        "number in stock": 3,
+        "number in stock": 32,
         "reduction": 0}
     ,
     "2":{
@@ -24,7 +24,7 @@
         "features": [
           
         ],
-        "number in stock": 9,
+        "number in stock": 33,
         "reduction": 0}
     ,
     "3":{
@@ -38,7 +38,7 @@
         "features" : [
 
         ],
-        "number in stock" : 3,
+        "number in stock" : 34,
         "reduction" : 0
     },
     "4":{
@@ -52,7 +52,7 @@
         "features" : [
 
         ],
-        "number in stock" : 5,
+        "number in stock" : 45,
         "reduction" : 0
     }
     ,
@@ -67,7 +67,7 @@
         "features": [
           
         ],
-        "number in stock": 8,
+        "number in stock": 38,
         "reduction": 0}
     ,
     "6":{
@@ -81,7 +81,7 @@
         "features": [
           
         ],
-        "number in stock": 5,
+        "number in stock": 35,
         "reduction": 0}
     ,
     "7":{
@@ -95,7 +95,7 @@
         "features": [
           
         ],
-        "number in stock": 3,
+        "number in stock": 23,
         "reduction": 0},
     "8":{
         "name": "Frigidaire FRIGCOMBO ULTRAWF Water Filter & PAULTRA Air Filter Combo Pack",
@@ -108,7 +108,7 @@
         "features": [
             
         ],
-        "number in stock": 4,
+        "number in stock": 46,
         "reduction": 0},
     "9":{
         "name": "240380301 - Kenmore Aftermarket Replacement Refrigerator Water Valve",
@@ -121,7 +121,7 @@
         "features": [
           
         ],
-        "number in stock": 7,
+        "number in stock": 57,
         "reduction": 0},
     "10":{
         "name": "Frigidaire 240351207 Crisper Drawer Refrigerator",
@@ -134,24 +134,10 @@
         "features": [
             
         ],
-        "number in stock": 1,
+        "number in stock": 51,
         "reduction": 0}
     ,
     "11":{
-        "name": "LG 5989JA0002N Genuine OEM Ice Maker Assembly for LG Refrigerators",
-        "type": "ice maker",
-        "brand": "LG",
-        "size": "11.25 x 6.25 x 3.75 inches",
-        "color": "White",
-        "price": 14856,
-        "number of doors": 0,
-        "features": [
-            
-        ],
-        "number in stock": 4,
-        "reduction": 0}
-    ,
-    "12":{
         "name": "Avantco A-49R-HC 54 Solid Door Reach-In Refrigerator",
         "type": "column fridge",
         "brand": "Avantco",
@@ -162,10 +148,10 @@
         "features": [
             
         ],
-        "number in stock": 2,
+        "number in stock": 48,
         "reduction": 0}
     ,
-    "13":{
+    "12":{
         "name": "Insignia™ - 7 Cu. Ft. Upright Freeze",
         "type": "upright freezer",
         "brand": "Insignia",
@@ -176,10 +162,10 @@
         "features": [
             
         ],
-        "number in stock": 3,
+        "number in stock": 37,
         "reduction": 0}
     ,
-    "14":{
+    "13":{
         "name": "Frigidaire 240324502 Frigidare Door Shelf Bin Unit",
         "type": "door shelf",
         "brand": "Frigidaire",
@@ -190,10 +176,10 @@
         "features": [
           
         ],
-        "number in stock": 4,
+        "number in stock": 35,
         "reduction": 0}
     ,
-    "15":{
+    "14":{
         "name": "Westinghouse 619L Side By Side Fridge with Water Dispenser",
         "type": "side by side",
         "brand": "Westinghouse",
@@ -204,6 +190,6 @@
         "features": [
             "water dispenser"
         ],
-        "number in stock": 3,
+        "number in stock": 39,
         "reduction": 0}
 }

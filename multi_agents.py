@@ -2,7 +2,6 @@ from cgi import test
 from unicodedata import name
 from PyQt5 import QtWidgets, uic, QtGui, QtCore
 import sys
-
 ###################################   test with the expert system
 from itertools import cycle
 from experta import *
@@ -19,9 +18,9 @@ import json
 global received_main
 global received_aux_1
 
-magasin_1 = open("magasin1.json")
-magasin_2 = open("magasin2.json")
-magasin_3 = open("magasin3.json")
+magasin_1 = open("magasin1.json","r+")
+magasin_2 = open("magasin2.json","r+")
+magasin_3 = open("magasin3.json","r+")
 
 magasin_1_dict = json.load(magasin_1)
 magasin_2_dict = json.load(magasin_2)
@@ -100,11 +99,14 @@ class Second(QtWidgets.QDialog):
 	def __init__(self):
 		super(Second, self).__init__()
 		uic.loadUi('receipt.ui', self)
-
-		self.receipt = self.findChild(QtWidgets.QTableView, 'receipt')
+		global receipt
+		global receipt_model
+		self.receipt = self.findChild(QtWidgets.QTableView, 'receipt')		
 		self.receipt_model = QtGui.QStandardItemModel()
 		self.receipt_model.setHorizontalHeaderLabels(['ID', 'Name', 'color', 'price', 'quantity','shop'])
 		self.receipt.setModel(self.receipt_model)
+		receipt=self.receipt
+		receipt_model=self.receipt_model
 
 		self.buy =  self.findChild(QtWidgets.QPushButton, 'validate_purchase')
 		self.buy.clicked.connect(self.buyClickListener)
@@ -112,16 +114,44 @@ class Second(QtWidgets.QDialog):
 		self.cancel_purchase =  self.findChild(QtWidgets.QPushButton, 'cancel_purchase')
 		self.cancel_purchase.clicked.connect(self.cancelClickListener)
 
+		global total
 		self.total =  self.findChild(QtWidgets.QPlainTextEdit, 'total')
+		total=self.total
+		total.setReadOnly(True)
 
-	def buyClickListener():
-		pass
+	def buyClickListener(self):
+		items=[]
+		for row in range(receipt_model.rowCount(receipt.rootIndex())):
+			items.append(receipt_model.index(row, 0, receipt.rootIndex())) # for column 0
+		rows = sorted(set(index.row() for index in items))
+		for row in rows:
+			id=receipt.model().data(receipt.model().index(row, 0))
+			numeroMagasin=receipt.model().data(receipt.model().index(row, 5))
+			print('id : ',id,' numero du magasin : ',numeroMagasin)
+			if(numeroMagasin=='1'):
+				produit=magasin_1_dict[id]
+				produit['number in stock']-=1
+				updt=json.dumps(magasin_1_dict, indent=4)
+				magasin_1.write(updt)
+			if(numeroMagasin=='2'):
+				produit=magasin_2_dict[id]
+				produit['number in stock']-=1
+				updt=json.dumps(magasin_2_dict, indent=4)
+				magasin_2.write(updt)
+			if(numeroMagasin=='3'):
+				produit=magasin_3_dict[id]
+				produit['number in stock']-=1
+				updt=json.dumps(magasin_3_dict, indent=4)
+				magasin_3.write(updt)
+		print("achat effectué avec succès")
+		self.close()
 
 	def cancelClickListener(self):
-		pass
+		self.close()
 
 	def fillTable(self):
 		items = []
+		prixTotal=0
 		for row in range(cart_purchase.rowCount(cart.rootIndex())):
 			items.append(cart_purchase.index(row, 0, cart.rootIndex())) # for column 0
 		rows = sorted(set(index.row() for index in items))
@@ -133,7 +163,8 @@ class Second(QtWidgets.QDialog):
 			id=cart.model().data(idIndex)
 			Name = cart.model().data(nameIndex)
 			price=cart.model().data(priceIndex)
-			print('name is ',Name,' price is ',price)
+			prixTotal=prixTotal+int(price)
+			print('name is ',Name,' price is ',price,' prix total: ',prixTotal)
 			produit.append(id)
 			produit.append(Name)
 			produit.append(cart.model().data(cart.model().index(row,2)))
@@ -144,6 +175,8 @@ class Second(QtWidgets.QDialog):
 			for element in produit:
 				selectedProducts.append(QtGui.QStandardItem(element))
 			self.receipt_model.appendRow(selectedProducts)
+			self.total.setPlainText(str(prixTotal))
+
 		
 
 class Ui(QtWidgets.QMainWindow):

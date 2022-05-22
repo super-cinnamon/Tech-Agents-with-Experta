@@ -10,7 +10,7 @@
         "features" : [
             "water dispenser","tablet"
         ],
-        "number in stock" : 7,
+        "number in stock" : 27,
         "reduction" : 0
     },
     "2":{
@@ -24,7 +24,7 @@
         "features" : [
 
         ],
-        "number in stock" : 3,
+        "number in stock" : 35,
         "reduction" : 0
     },
     "3":{
@@ -38,7 +38,7 @@
         "features": [
           
         ],
-        "number in stock":4,
+        "number in stock":44,
         "reduction": 0},
     "4":{
         "name" : "undercounter refrigerator cooling chest freezer",
@@ -51,7 +51,7 @@
         "features" : [
 
         ],
-        "number in stock" : 5,
+        "number in stock" : 35,
         "reduction" : 0
     },
     "5":{
@@ -65,7 +65,7 @@
         "features" : [
 
         ],
-        "number in stock" : 2,
+        "number in stock" : 32,
         "reduction" : 0
     },
     "6":{
@@ -79,7 +79,7 @@
         "features" : [
 
         ],
-        "number in stock" : 2,
+        "number in stock" : 28,
         "reduction" : 0
     },
     "7":{
@@ -93,7 +93,7 @@
         "features": [
           
         ],
-        "number in stock": 4,
+        "number in stock": 40,
         "reduction": 0
       },
       "8":{
@@ -107,7 +107,7 @@
         "features" : [
 
         ],
-        "number in stock" : 3,
+        "number in stock" : 31,
         "reduction" : 0
     },
     "9":{
@@ -121,7 +121,7 @@
         "features" : [
 
         ],
-        "number in stock" : 3,
+        "number in stock" : 36,
         "reduction" : 0
     },
     "10":{
@@ -135,7 +135,7 @@
         "features" : [
 
         ],
-        "number in stock" : 8,
+        "number in stock" : 48,
         "reduction" : 0
     }
     ,
@@ -150,7 +150,7 @@
         "features" : [
             "water dispenser","ice dispenser"
         ],
-        "number in stock" : 8,
+        "number in stock" : 18,
         "reduction" : 0
     }
     ,
@@ -165,7 +165,7 @@
         "features" : [
             "water dispenser","ice dispenser"
         ],
-        "number in stock" : 6,
+        "number in stock" : 36,
         "reduction" : 0
     },
     "13":{
@@ -179,6 +179,6 @@
         "features": [
             "water dispenser"
         ],
-        "number in stock": 2,
+        "number in stock": 22,
         "reduction": 0}
 }

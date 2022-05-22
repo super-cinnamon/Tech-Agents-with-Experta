@@ -10,7 +10,7 @@
     "features": [
       
     ],
-    "number in stock": 12,
+    "number in stock": 35,
     "reduction": 0
   }
   ,
@@ -26,7 +26,7 @@
     "features": [
       
     ],
-    "number in stock": 12,
+    "number in stock": 26,
     "reduction": 0}
   ,
   
@@ -41,7 +41,7 @@
     "features": [
       "compressor"
     ],
-    "number in stock": 10,
+    "number in stock": 34,
     "reduction": 0}
   ,
   
@@ -56,7 +56,7 @@
     "features": [
       
     ],
-    "number in stock": 6,
+    "number in stock": 30,
     "reduction": 0}
   ,
   
@@ -71,7 +71,7 @@
     "features": [
       "water dispenser"
     ],
-    "number in stock": 3,
+    "number in stock": 28,
     "reduction": 0}
   ,
   
@@ -86,7 +86,7 @@
     "features": [
       
     ],
-    "number in stock":8,
+    "number in stock":40,
     "reduction": 0}
   ,
   
@@ -101,7 +101,7 @@
     "features": [
       
     ],
-    "number in stock":6,
+    "number in stock":28,
     "reduction": 0}
   ,
   
@@ -116,7 +116,7 @@
     "features": [
       
     ],
-    "number in stock":4,
+    "number in stock":37,
     "reduction": 0}
   ,
   
@@ -131,7 +131,7 @@
     "features": [
       
     ],
-    "number in stock":5,
+    "number in stock":39,
     "reduction": 0}
   ,
   
@@ -146,7 +146,7 @@
     "features": [
       
     ],
-    "number in stock":7,
+    "number in stock":27,
     "reduction": 0}
   ,
   
@@ -161,7 +161,7 @@
     "features": [
       
     ],
-    "number in stock": 4,
+    "number in stock": 42,
     "reduction": 0}
   ,
   
@@ -176,7 +176,7 @@
     "features": [
       
     ],
-    "number in stock": 2,
+    "number in stock": 26,
     "reduction": 0 }
   ,
     "13":{
@@ -190,7 +190,7 @@
       "features": [
           
       ],
-      "number in stock": 2,
+      "number in stock": 28,
       "reduction": 0}
   ,
   "14":{
@@ -204,7 +204,7 @@
     "features": [
         
     ],
-    "number in stock": 3,
+    "number in stock": 31,
     "reduction": 0}
   ,
   "15":{
@@ -218,7 +218,7 @@
     "features": [
         
     ],
-    "number in stock": 6,
+    "number in stock": 36,
     "reduction": 0}
   ,
   "16":{
@@ -232,6 +232,6 @@
     "features": [
         "water dispenser","ice dispenser"
     ],
-    "number in stock": 6,
+    "number in stock": 26,
     "reduction": 0}
 }
