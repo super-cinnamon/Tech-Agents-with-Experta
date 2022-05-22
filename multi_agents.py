@@ -17,6 +17,7 @@ import json
 
 global received_main
 global received_aux_1
+received_aux_1 = ""
 
 magasin_1 = open("magasin1.json","r+")
 magasin_2 = open("magasin2.json","r+")
@@ -351,6 +352,7 @@ class Ui(QtWidgets.QMainWindow):
 		
 	def searchFactsClickListener(self):
 		self.shop_results_model.removeRows(0, self.shop_results_model.rowCount() )
+
 		for index in range(self.facts_list_model.rowCount()):
 			item = self.facts_list_model.item(index).text()
 			if "price" not in item and "accessories" not in item:
@@ -448,6 +450,8 @@ class Ui(QtWidgets.QMainWindow):
 				msg.body = f'{test}'
 				await self.send(msg)
 				print("message sent")
+				global received_aux_1
+				received_aux_1=""
 				time.sleep(0.5)
 				self.set_next_state("waiting")
 		class waiting(State):
@@ -529,14 +533,12 @@ class Ui(QtWidgets.QMainWindow):
 						for element in magasin_3_dict.keys():
 							if magasin_3_dict[element]["type"] == each.lower():
 								from_aux_to_main+=f'{element}; {magasin_3_dict[element]["name"]}; {magasin_3_dict[element]["color"]}; {magasin_3_dict[element]["price"]}; {magasin_3_dict[element]["number in stock"]}; 3, '
-						
-
 					global received_aux_1
 					received_aux_1 = from_aux_to_main
 					time.sleep(0.5)
 					self.set_next_state("sending")
 				else:
-					print("no message received after 10 seconds")
+					print("no message received after 999 seconds")
 					
 		async def setup(self):
 			fsm = self.behavior()

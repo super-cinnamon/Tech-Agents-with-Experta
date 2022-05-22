@@ -67,62 +67,71 @@ class myEngine(KnowledgeEngine):
 	@Rule(Facts(f_doors = P(lambda nb: nb <= 3)))
 	def FrenchFridge(self):
 		engineV.declare(Facts(french_fridge = True))
-		invocated_rules.append("if doors <= 3")
+		invocated_rules.append("if doors <= 3 then french doors")
 	@Rule(Facts(hi_temp = P(lambda nb: nb <= (-18))))
 	def Freezer(self):
 		engineV.declare(Facts(type = 'Freezer'))
-		invocated_rules.append("if high temperature <= -18")
+		invocated_rules.append("if high temperature <= -18 then type = freezer")
 	@Rule(Facts(hi_temp = P(lambda nb: nb > (-18))))
 	def Fridge(self):
 		engineV.declare(Facts(type = 'Fridge'))
-		invocated_rules.append("if high temperature > -18")
+		invocated_rules.append("if high temperature > -18 then type = fridge")
 	@Rule(Facts(type = 'Fridge'), Facts(lo_temp = P(lambda nb: nb <= (-18))))
 	def HasFreezer(self):
 		engineV.declare(Facts(has_freezer = True))
-		invocated_rules.append("if low temperature <= -18")
+		invocated_rules.append("if low temperature <= -18 then has freezer")
 	@Rule(Facts(type = 'Fridge'), Facts(lo_temp = P(lambda nb: nb > (-18))))
 	def NoFreezer(self):
 		engineV.declare(Facts(has_freezer = False))
-		invocated_rules.append("if low temperature > -18")
+		invocated_rules.append("if low temperature > -18 then does not have freezer")
 	@Rule(Facts(size = 'Large'), Facts(type = 'Freezer'))
 	def ChestFreezer(self):
 		getFridges.append("Chest Freezer")
-		invocated_rules.append("if size = large, type = freeze")
+		invocated_rules.append("if size = large and type = freezer then chest freezer")
 	@Rule(Facts(size = 'Small'), Facts(type = 'Freezer'))
 	def UprightFreezer(self):
 		getFridges.append("Upright Freezer")
-		invocated_rules.append("if size = small, type = freeze")
+		invocated_rules.append("if size = small and type = freezer then upright freezer")
 	@Rule(Facts(size = 'Small'), Facts(f_doors = 1), Facts(has_freezer = False))
 	def MiniFridge(self):
 		getFridges.append("Mini Fridge")
-		invocated_rules.append("if size = small, doors = 1, ")
+		invocated_rules.append("if size = small and doors = 1 and has freezer then mini fridge")
 	@Rule(Facts(size = 'Large'), Facts(f_doors = 2), Facts(has_freezer = True))
 	def SideBySide(self):
-		getFridges.append("Side-By-Side Fridge")
+		getFridges.append("Side By Side Fridge")
+		invocated_rules.append("if size = large and doors = 2 and freezers then side by side")
 	@Rule(Facts(size = 'Large'), Facts(french_fridge = True), Facts(has_freezer = True))
 	def FrenchDoorFridge(self):
 		getFridges.append("French Doors Fridge")
+		invocated_rules.append("if size = large and french doors and has freezer then french doors fridge")
 	@Rule(Facts(size = 'Medium'), Facts(f_doors = 2), Facts(has_freezer = True))
 	def StandardFridge(self):
 		getFridges.append("Standard Fridge")
+		invocated_rules.append("if size = medium and doors = 2 and has freezer then standard fridge")
 	@Rule(Facts(size = 'Medium'), Facts(f_doors = 1), Facts(has_freezer = False))
 	def SimpleFridge(self):
 		getFridges.append("Simple Fridge")
+		invocated_rules.append("if size = medium and doors = 1 and has freezer then simple fridge")
 	@Rule(Facts(size = 'Large'),Facts(french_fridge = True), Facts(features__tablet =  1), Facts(has_freezer = True))
 	def SmartFridge(self):
 		getFridges.append("Smart Fridge")
+		invocated_rules.append("if size = large and french doors and has freezer and has tablet then smart fridge")
 	@Rule(Facts(size = 'Extra Large'), Facts(has_freezer = False), Facts(f_doors = 2))
 	def ColumnFridge(self):
 		getFridges.append("Column Fridge")
+		invocated_rules.append("if size = extra large and doors = 2 and has freezer then column fridge")
 	@Rule(Facts(features__waterdispenser=1))
 	def FeatureWater(self):
 		fridge_features.append("Water dispenser")
+		invocated_rules.append("if water dispenser then has water dispenser")
 	@Rule(Facts(features__icedispenser=1))
 	def FeatureIce(self):
 		fridge_features.append("Ice dispenser")
+		invocated_rules.append("if ice dispenser then has ice dispenser")
 	@Rule(Facts(features__tablet=1))
 	def FeatureTablet(self):
 		fridge_features.append("Tablet")
+		invocated_rules.append("if tablet then has tablet")
 		
 
 
