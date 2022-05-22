@@ -65,7 +65,7 @@ class myEngine(KnowledgeEngine):
 		getFridges.append("Mini Fridge")
 	@Rule(Facts(size = 'Large'), Facts(doors = 2), Facts(has_freezer = True))
 	def SideBySide(self):
-		getFridges.append("Side-By-Side Fridge")
+		getFridges.append("Side By Side Fridge")
 	@Rule(Facts(size = 'Large'), Facts(french_fridge = True), Facts(has_freezer = True))
 	def FrenchDoorFridge(self):
 		getFridges.append("French Doors Fridge")
