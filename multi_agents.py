@@ -145,6 +145,7 @@ class Second(QtWidgets.QDialog):
 				updt=json.dumps(magasin_3_dict, indent=4)
 				magasin_3.write(updt)
 		print("achat effectué avec succès")
+		QtWidgets.QMessageBox.about(self, "Suucès", "Achat effectué avec succès")
 		self.close()
 
 	def cancelClickListener(self):

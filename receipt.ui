@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(246, 255, 235);</string>
+  </property>
   <widget class="QTableView" name="receipt">
    <property name="geometry">
     <rect>
@@ -21,6 +24,10 @@
      <width>381</width>
      <height>211</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(255, 255, 255);
+color: rgb(30, 43, 26);</string>
    </property>
   </widget>
   <widget class="QPushButton" name="validate_purchase">
@@ -31,6 +38,10 @@
      <width>75</width>
      <height>23</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(224, 255, 219);
+color: rgb(31, 47, 25);</string>
    </property>
    <property name="text">
     <string>OK</string>
@@ -45,6 +56,10 @@
      <height>23</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(30, 43, 26);
+background-color: rgb(224, 255, 219);</string>
+   </property>
    <property name="text">
     <string>Cancel</string>
    </property>
@@ -57,6 +72,10 @@
      <width>141</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(30, 43, 26);</string>
    </property>
    <property name="readOnly">
     <bool>true</bool>
@@ -71,6 +90,9 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(34, 48, 23);</string>
+   </property>
    <property name="text">
     <string>Total:</string>
    </property>
@@ -83,6 +105,9 @@
      <width>51</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(51, 71, 45);</string>
    </property>
    <property name="text">
     <string>Receipt</string>

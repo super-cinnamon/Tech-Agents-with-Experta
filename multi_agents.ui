@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(243, 255, 255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -22,6 +25,9 @@
       <width>47</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);</string>
     </property>
     <property name="text">
      <string>Size</string>
@@ -36,6 +42,9 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);</string>
+    </property>
     <property name="text">
      <string>Doors</string>
     </property>
@@ -49,6 +58,9 @@
       <height>21</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);</string>
+    </property>
     <property name="text">
      <string>Temperature Max</string>
     </property>
@@ -61,6 +73,10 @@
       <width>141</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);
+background-color: rgb(255, 255, 255);</string>
     </property>
     <item>
      <property name="text">
@@ -92,6 +108,10 @@
       <height>22</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);
+background-color: rgb(255, 255, 255);</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
@@ -101,6 +121,9 @@
       <width>101</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);</string>
     </property>
     <property name="text">
      <string>Temperature Min</string>
@@ -224,6 +247,9 @@
       <height>21</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);</string>
+    </property>
     <property name="text">
      <string>Features</string>
     </property>
@@ -236,6 +262,10 @@
       <width>161</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);
+background-color: rgb(255, 255, 255);</string>
     </property>
     <item>
      <property name="text">
@@ -262,6 +292,10 @@
       <height>141</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);
+background-color: rgb(255, 255, 255);</string>
+    </property>
    </widget>
    <widget class="QListView" name="reco_results">
     <property name="geometry">
@@ -272,6 +306,10 @@
       <height>151</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(19, 26, 63);</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="remove_fact">
     <property name="geometry">
@@ -281,6 +319,10 @@
       <width>75</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);
+background-color: rgb(215, 241, 255);</string>
     </property>
     <property name="text">
      <string>remove</string>
@@ -308,6 +350,10 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);
+background-color: rgb(215, 241, 255);</string>
+    </property>
     <property name="text">
      <string>search</string>
     </property>
@@ -320,6 +366,10 @@
       <width>75</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);
+background-color: rgb(215, 241, 255);</string>
     </property>
     <property name="text">
      <string>reset</string>
@@ -334,6 +384,9 @@
       <height>16</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);</string>
+    </property>
     <property name="text">
      <string>Input Facts</string>
     </property>
@@ -346,6 +399,9 @@
       <width>111</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);</string>
     </property>
     <property name="text">
      <string>Search Results</string>
@@ -360,6 +416,9 @@
       <height>16</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);</string>
+    </property>
     <property name="text">
      <string>Recommendations</string>
     </property>
@@ -372,6 +431,10 @@
       <width>75</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(215, 241, 255);
+color: rgb(19, 26, 63);</string>
     </property>
     <property name="text">
      <string>Add to cart</string>
@@ -386,6 +449,9 @@
       <height>16</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);</string>
+    </property>
     <property name="text">
      <string>Cart</string>
     </property>
@@ -398,6 +464,10 @@
       <width>75</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(215, 241, 255);
+color: rgb(19, 26, 63);</string>
     </property>
     <property name="text">
      <string>Purchase</string>
@@ -412,6 +482,10 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(215, 241, 255);
+color: rgb(19, 26, 63);</string>
+    </property>
     <property name="text">
      <string>remove</string>
     </property>
@@ -425,6 +499,10 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(215, 241, 255);
+color: rgb(19, 26, 63);</string>
+    </property>
     <property name="text">
      <string>reset</string>
     </property>
@@ -437,6 +515,10 @@
       <width>161</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);
+background-color: rgb(255, 255, 255);</string>
     </property>
     <item>
      <property name="text">
@@ -478,6 +560,9 @@
       <height>21</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);</string>
+    </property>
     <property name="text">
      <string>Accessories</string>
     </property>
@@ -490,6 +575,9 @@
       <width>31</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(215, 241, 255);</string>
     </property>
     <property name="text">
      <string/>
@@ -508,6 +596,9 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(215, 241, 255);</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -525,6 +616,9 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(215, 241, 255);</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -541,6 +635,9 @@
       <width>31</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(215, 241, 255);</string>
     </property>
     <property name="text">
      <string/>
@@ -593,6 +690,9 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(215, 241, 255);</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -609,6 +709,9 @@
       <width>31</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(215, 241, 255);</string>
     </property>
     <property name="text">
      <string/>
@@ -627,6 +730,10 @@
       <height>181</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(19, 26, 63);</string>
+    </property>
    </widget>
    <widget class="QTableView" name="cart">
     <property name="geometry">
@@ -637,6 +744,10 @@
       <height>121</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(19, 26, 63);</string>
+    </property>
    </widget>
    <widget class="QDoubleSpinBox" name="max_temp_spinner">
     <property name="geometry">
@@ -646,6 +757,10 @@
       <width>71</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);
+background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="minimum">
      <double>-20.000000000000000</double>
@@ -668,6 +783,10 @@
       <width>71</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(19, 26, 63);
+background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="decimals">
      <number>2</number>
