@@ -64,10 +64,10 @@ class myEngine(KnowledgeEngine):
 		engineV.duplicate(engineV.facts[1], type = 'automobile')
 ################################################################################################################################
 ################################################# fridge rules ########################################################
-	@Rule(Facts(f_doors = P(lambda nb: nb <= 3)))
+	@Rule(Facts(f_doors = P(lambda nb: nb >= 3)))
 	def FrenchFridge(self):
 		engineV.declare(Facts(french_fridge = True))
-		invocated_rules.append("if doors <= 3 then french doors")
+		invocated_rules.append("if doors >= 3 then french doors")
 	@Rule(Facts(hi_temp = P(lambda nb: nb <= (-18))))
 	def Freezer(self):
 		engineV.declare(Facts(type = 'Freezer'))
@@ -95,7 +95,7 @@ class myEngine(KnowledgeEngine):
 	@Rule(Facts(size = 'Small'), Facts(f_doors = 1), Facts(has_freezer = False))
 	def MiniFridge(self):
 		getFridges.append("Mini Fridge")
-		invocated_rules.append("if size = small and doors = 1 and has freezer then mini fridge")
+		invocated_rules.append("if size = small and doors = 1 and does not have freezer then mini fridge")
 	@Rule(Facts(size = 'Large'), Facts(f_doors = 2), Facts(has_freezer = True))
 	def SideBySide(self):
 		getFridges.append("Side By Side Fridge")

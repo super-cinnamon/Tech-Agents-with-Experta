@@ -39,7 +39,7 @@ class Facts(Fact):
 class myEngine(KnowledgeEngine):
 ################################################################################################################################
 ################################################# fridge rules ########################################################
-	@Rule(Facts(doors = P(lambda nb: nb <= 3)))
+	@Rule(Facts(doors = P(lambda nb: nb >= 3)))
 	def FrenchFridge(self):
 		engineV.declare(Facts(french_fridge = True))
 	@Rule(Facts(hi_temp = P(lambda nb: nb <= (-18))))
