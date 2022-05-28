@@ -322,10 +322,14 @@ class Ui(QtWidgets.QMainWindow):
 		self.fridgeModel = QtGui.QStandardItemModel()
 		self.FactListFridge.setModel(self.fridgeModel)
 
-		#vehicle result declaration
+		#fridge result declaration
 		self.Fridges = self.findChild(QtWidgets.QListView, 'fridges')
 		self.resultsFridgeModel = QtGui.QStandardItemModel()
 		self.Fridges.setModel(self.resultsFridgeModel)
+
+		self.fridgeRules = self.findChild(QtWidgets.QListView, 'fridgeRules')
+		self.fridgeRulesModel = QtGui.QStandardItemModel()
+		self.fridgeRules.setModel(self.fridgeRulesModel)
 
 		#buttons declaration
 		#add doors
@@ -492,10 +496,13 @@ class Ui(QtWidgets.QMainWindow):
 		for element in getFridges:
 			item = QtGui.QStandardItem(f'{element}')
 			self.resultsFridgeModel.appendRow(item)
-		if(getFridges):
+		if(fridge_features and getFridges):
 			self.resultsFridgeModel.appendRow(QtGui.QStandardItem(f'with features'))
 			for element in fridge_features:
 				self.resultsFridgeModel.appendRow( QtGui.QStandardItem(f'{element}'))
+		for element in invocated_rules:
+			item = QtGui.QStandardItem(f'{element}')
+			self.fridgeRulesModel.appendRow(item)
 		getFridges.clear()
 		fridge_features.clear()
 	def resetFridgeFactsClickListener(self):
