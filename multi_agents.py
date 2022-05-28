@@ -204,13 +204,6 @@ class Ui(QtWidgets.QMainWindow):
 		self.add_min_temp =  self.findChild(QtWidgets.QPushButton, 'add_min_temp')
 		self.add_min_temp.clicked.connect(self.addMinTempClickListener)
 
-		#min price button
-		self.add_min_price =  self.findChild(QtWidgets.QPushButton, 'add_min_price')
-		self.add_min_price.clicked.connect(self.addMinPriceClickListener)
-
-		#max price button
-		self.add_max_price =  self.findChild(QtWidgets.QPushButton, 'add_max_price')
-		self.add_max_price.clicked.connect(self.addMaxPriceClickListener)
 
 		#features button
 		self.add_feature =  self.findChild(QtWidgets.QPushButton, 'add_feature')
@@ -264,19 +257,6 @@ class Ui(QtWidgets.QMainWindow):
 		cart_purchase = self.cart_model
 		cart = self.cart
 
-		#sliders and their labels
-		#min price
-		self.min_price = self.findChild(QtWidgets.QSlider, 'min_price')
-		self.min_price_label = self.findChild(QtWidgets.QLabel, 'min_price_label')
-		self.min_price.setRange(0,200000)
-		self.min_price.valueChanged.connect(self.updateMinLabel)
-
-		#max price
-		self.max_price = self.findChild(QtWidgets.QSlider, 'max_price')
-		self.max_price_label = self.findChild(QtWidgets.QLabel, 'max_price_label')
-		self.max_price.setRange(0,1000000)
-		self.max_price.valueChanged.connect(self.updateMaxLabel)
-
 		#action buttons
 		#search facts button
 		self.search_facts =  self.findChild(QtWidgets.QPushButton, 'search_facts')
@@ -310,10 +290,6 @@ class Ui(QtWidgets.QMainWindow):
 	
 	#button click listeners
 	################################################## vehicles ###################################################
-	def updateMinLabel(self, value):
-		self.min_price_label.setText(str(value))
-	def updateMaxLabel(self, value):
-		self.max_price_label.setText(str(value))
 	def addSizeClickListener(self):
 		item = QtGui.QStandardItem(f'size={self.combo_size.currentText()}')
 		self.facts_list_model.appendRow(item)
@@ -328,9 +304,6 @@ class Ui(QtWidgets.QMainWindow):
 	def addMinTempClickListener(self):
 		item = QtGui.QStandardItem(f'lo_temp = {self.min_temp_spinner.value()}')
 		self.facts_list_model.appendRow(item)
-	def addMaxPriceClickListener(self):
-		item = QtGui.QStandardItem(f'max_price = {self.max_price.value()}')
-		self.facts_list_model.appendRow(item)
 	def addFeatureClickListener(self):
 		string = str(self.combo_features.currentText())
 		string = string.replace(" ", "")
@@ -341,12 +314,6 @@ class Ui(QtWidgets.QMainWindow):
 		string = str(self.combo_accessories.currentText())
 		item = QtGui.QStandardItem(f'accessories={string}')
 		self.facts_list_model.appendRow(item)  
-	def addMinPriceClickListener(self):
-		item = QtGui.QStandardItem(f'min_price = {self.min_price.value()}')
-		self.facts_list_model.appendRow(item)
-		# if len(self.FactListVehicles.selectedIndexes()) >= 1:
-		#     for items in reversed(sorted(self.FactListVehicles.selectedIndexes())):
-		#         self.listModel.takeRow(items.row()) 
 		
 	def resetFactsClickListener(self):
 		self.facts_list_model.removeRows( 0, self.facts_list_model.rowCount() )
