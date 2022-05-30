@@ -1,0 +1,184 @@
+{
+    "1":{
+        "name" : "LG 508L Slim French Door Fridge with InstaView Door-in-Door",
+        "type" : "smart fridge",
+        "brand" : "LG",
+        "size" : "large",
+        "color" : "silver",
+        "price" : 509643,
+        "number of doors": 4,
+        "features" : [
+            "water dispenser","tablet"
+        ],
+        "number in stock" : 27,
+        "reduction" : 0
+    },
+    "2":{
+        "name" : "Hisense 179L Single Door Fridge",
+        "type" : "simple fridge",
+        "brand" : "Hisense",
+        "size" : "medium",
+        "color" : "Red",
+        "price" : 72681,
+        "number of doors": 1,
+        "features" : [
+
+        ],
+        "number in stock" : 35,
+        "reduction" : 0
+    },
+    "3":{
+        "name": "Hisense 125L Bar Fridge",
+        "type": "mini fridge",
+        "brand": "Hisense",
+        "size": "small",
+        "color": "Black",
+        "price": 50833,
+        "number of doors": 1,
+        "features": [
+          
+        ],
+        "number in stock":44,
+        "reduction": 0},
+    "4":{
+        "name" : "undercounter refrigerator cooling chest freezer",
+        "type" : "chest freezer",
+        "brand" : "Darget",
+        "size" : "large",
+        "color" : "White",
+        "price" : 20391,
+        "number of doors": 1,
+        "features" : [
+
+        ],
+        "number in stock" : 35,
+        "reduction" : 0
+    },
+    "5":{
+        "name" : "398L-1288L large capacity High quality Single temperature top open chest freezer deep freezer refrigerator",
+        "type" : "chest freezer",
+        "brand" : "Xulier",
+        "size" : "large",
+        "color" : "White",
+        "price" : 31315,
+        "number of doors": 1,
+        "features" : [
+
+        ],
+        "number in stock" : 32,
+        "reduction" : 0
+    },
+    "6":{
+        "name" : "Frigidaire 5303918774 Genuine OEM Condenser Fan Motor Assembly for Refrigerators",
+        "type" : "fridge fan",
+        "brand" : "Frigidaire",
+        "size" : "10.87 x 7 x 10.25 inches",
+        "color" : "NA",
+        "price" : 10050,
+        "number of doors": 0,
+        "features" : [
+
+        ],
+        "number in stock" : 28,
+        "reduction" : 0
+    },
+    "7":{
+        "name": "Aquaport Fridge Filter for LG",
+        "type": "water filter",
+        "brand": "Aquaport",
+        "size": "NA",
+        "color": "NA",
+        "price": 11506,
+        "number of doors": 0,
+        "features": [
+          
+        ],
+        "number in stock": 40,
+        "reduction": 0
+      },
+      "8":{
+        "name" : "Frigidaire 5303918344 Ice Maker Kit",
+        "type" : "ice maker",
+        "brand" : "Frigidaire",
+        "size" : "14 x 14 x 14 inches",
+        "color" : "NA",
+        "price" : 10195,
+        "number of doors": 0,
+        "features" : [
+
+        ],
+        "number in stock" : 31,
+        "reduction" : 0
+    },
+    "9":{
+        "name" : "GE WR30X10093 Refrigerator Icemaker Kit",
+        "type" : "ice maker",
+        "brand" : "GE",
+        "size" : "9.62 x 5.25 x 5.5 inches",
+        "color" : "White",
+        "price" : 21702,
+        "number of doors": 0,
+        "features" : [
+
+        ],
+        "number in stock" : 36,
+        "reduction" : 0
+    },
+    "10":{
+        "name" : "HapiLeap Egg Holder for Fridge Stackable Egg Storage Container for Refrigerator Door Stores 30 Eggs Space Saver (1 Pack)",
+        "type" : "egg tray",
+        "brand" : "HapiLeap",
+        "size" : "10.39 x 8.11 x 4.61 inches",
+        "color" : "White",
+        "price" : 2184,
+        "number of doors": 0,
+        "features" : [
+
+        ],
+        "number in stock" : 48,
+        "reduction" : 0
+    }
+    ,
+    "11":{
+        "name" : "LG 637L French Door Fridge with InstaView Door-In-Door",
+        "type" : "french doorssss fridge",
+        "brand" : "LG",
+        "size" : "large",
+        "color" : "Matte Black",
+        "price" : 684879,
+        "number of doors": 4,
+        "features" : [
+            "water dispenser","ice dispenser"
+        ],
+        "number in stock" : 18,
+        "reduction" : 0
+    }
+    ,
+    "12":{
+        "name" : "LG 637L French Door Fridge with Slim In-Door Icemaker",
+        "type" : "french doorssss fridge",
+        "brand" : "LG",
+        "size" : "large",
+        "color" : "Matte Black",
+        "price" : 566676,
+        "number of doors": 4,
+        "features" : [
+            "water dispenser","ice dispenser"
+        ],
+        "number in stock" : 36,
+        "reduction" : 0
+    },
+    "13":{
+        "name": "Hisense 578L Side By Side Fridge with Water Dispenser",
+        "type": "side by side",
+        "brand": "Hisense",
+        "size": "large",
+        "color": "Silver",
+        "price": 203029,
+        "number of doors": 2,
+        "features": [
+            "water dispenser"
+        ],
+        "number in stock": 22,
+        "reduction": 0}
+}

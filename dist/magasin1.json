@@ -1,0 +1,237 @@
+{
+    "1":{
+    "name": "LG 655L Pure N Fresh Side by Side Fridge",
+    "type": "side by side",
+    "brand": "LG",
+    "size": "large",
+    "color": "White",
+    "price": 261864,
+    "number of doors": 2,
+    "features": [
+      
+    ],
+    "number in stock": 35,
+    "reduction": 0
+  }
+  ,
+  
+    "2":{
+    "name": "LG 655L Pure N Fresh Side by Side Fridge",
+    "type": "side by side",
+    "brand": "LG",
+    "size": "large",
+    "color": "Matte Black",
+    "price": 261864,
+    "number of doors": 2,
+    "features": [
+      
+    ],
+    "number in stock": 26,
+    "reduction": 0}
+  ,
+  
+    "3":{
+    "name": "side by side home fridge wind cooled silver with door handles energy saving 560L double door refrigerator",
+    "type": "side by side",
+    "brand": "OEM",
+    "size": "large",
+    "color": "Silver",
+    "price": 85935,
+    "number of doors": 2,
+    "features": [
+      "compressor"
+    ],
+    "number in stock": 34,
+    "reduction": 0}
+  ,
+  
+    "4":{
+    "name": "Hisense 205L Top Mount Fridge",
+    "type": "standard fridge",
+    "brand": "Hisense",
+    "size": "medium",
+    "color": "White",
+    "price": 79381,
+    "number of doors": 2,
+    "features": [
+      
+    ],
+    "number in stock": 30,
+    "reduction": 0}
+  ,
+  
+    "5":{
+    "name": "Samsung 498L French Door Refrigeration",
+    "type": "french doors fridge",
+    "brand": "Samsung",
+    "size": "large",
+    "color": "Silver",
+    "price": 232900,
+    "number of doors": 3,
+    "features": [
+      "water dispenser"
+    ],
+    "number in stock": 28,
+    "reduction": 0}
+  ,
+  
+    "6":{
+    "name": "Hisense 45L Bar Fridge",
+    "type": "mini fridge",
+    "brand": "Hisense",
+    "size": "small",
+    "color": "White",
+    "price": 36267,
+    "number of doors": 1,
+    "features": [
+      
+    ],
+    "number in stock":40,
+    "reduction": 0}
+  ,
+  
+    "7":{
+    "name": "Hisense 125L Bar Fridge",
+    "type": "mini fridge",
+    "brand": "Hisense",
+    "size": "small",
+    "color": "Black",
+    "price": 50833,
+    "number of doors": 1,
+    "features": [
+      
+    ],
+    "number in stock":28,
+    "reduction": 0}
+  ,
+  
+    "8":{
+    "name": "Hisense 125L Bar Fridge",
+    "type": "mini fridge",
+    "brand": "Hisense",
+    "size": "small",
+    "color": "White",
+    "price": 50833,
+    "number of doors": 1,
+    "features": [
+      
+    ],
+    "number in stock":37,
+    "reduction": 0}
+  ,
+  
+    "9":{
+    "name": "Westinghouse 466L Single Door Fridge",
+    "type": "simple fridge",
+    "brand": "Westinghouse",
+    "size": "medium",
+    "color": "Silver",
+    "price": 291162,
+    "number of doors":1,
+    "features": [
+      
+    ],
+    "number in stock":39,
+    "reduction": 0}
+  ,
+  
+    "10":{
+    "name": "Westinghouse 243L Single Door Fridge",
+    "type": "simple fridge",
+    "brand": "Westinghouse",
+    "size": "medium",
+    "color": "White",
+    "price": 160073,
+    "number of doors": 1,
+    "features": [
+      
+    ],
+    "number in stock":27,
+    "reduction": 0}
+  ,
+  
+    "11":{
+    "name": "Frigidaire 240324502 Frigidare Door Shelf Bin Unit",
+    "type": "door shelf",
+    "brand": "Frigidaire",
+    "size": "13 x 5 x 6.5 inches",
+    "color": "Clear",
+    "price": 7719,
+    "number of doors": 0,
+    "features": [
+      
+    ],
+    "number in stock": 42,
+    "reduction": 0}
+  ,
+  
+    "12":{
+    "name": "Aquaport Fridge Filter for LG",
+    "type": "water filter",
+    "brand": "Aquaport",
+    "size": "NA",
+    "color": "NA",
+    "price": 11506,
+    "number of doors": 0,
+    "features": [
+      
+    ],
+    "number in stock": 26,
+    "reduction": 0 }
+  ,
+    "13":{
+      "name": "Avantco A-49R-HC 54 Solid Door Reach-In Refrigerator",
+      "type": "column fridge",
+      "brand": "Avantco",
+      "size": "extra large",
+      "color": "Silver",
+      "price": 393120,
+      "number of doors": 2,
+      "features": [
+          
+      ],
+      "number in stock": 28,
+      "reduction": 0}
+  ,
+  "14":{
+    "name": "Insignia™ - 7 Cu. Ft. Upright Freeze",
+    "type": "upright freezer",
+    "brand": "Insignia",
+    "size": "small",
+    "color": "White",
+    "price": 46463,
+    "number of doors": 1,
+    "features": [
+        
+    ],
+    "number in stock": 31,
+    "reduction": 0}
+  ,
+  "15":{
+    "name": "GE - 14.1 Cu. Ft. Frost-Free Upright Freezer",
+    "type": "upright freezer",
+    "brand": "GE",
+    "size": "small",
+    "color": "White",
+    "price": 117542,
+    "number of doors": 1,
+    "features": [
+        
+    ],
+    "number in stock": 36,
+    "reduction": 0}
+  ,
+  "16":{
+    "name": "LG 847L InstaView Door-In-Door French Door Fridge with Ice & Water Dispenser",
+    "type": "french doors fridge",
+    "brand": "LG",
+    "size": "large",
+    "color": "Matte Black",
+    "price": 728021,
+    "number of doors": 4,
+    "features": [
+        "water dispenser","ice dispenser"
+    ],
+    "number in stock": 26,
+    "reduction": 0}
+}

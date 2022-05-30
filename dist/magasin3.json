@@ -1,0 +1,195 @@
+{
+    "1":{
+        "name": "Kitchen Details Refrigerator Storage Fridge Organizer Clear with Handles Egg Crate",
+        "type": "egg tray",
+        "brand": "Kitchen Details",
+        "size": "14.49 x 4.53 x 2.95 inches",
+        "color": "Clear",
+        "price": 1747,
+        "number of doors": 0,
+        "features": [
+          
+        ],
+        "number in stock": 32,
+        "reduction": 0}
+    ,
+    "2":{
+        "name": "LG 5989JA0002N Genuine OEM Icemaker Assembly for LG Refrigerators",
+        "type": "ice maker",
+        "brand": "LG",
+        "size": "11.25 x 6.25 x 3.75 inches",
+        "color": "White",
+        "price": 14856,
+        "number of doors": 0,
+        "features": [
+          
+        ],
+        "number in stock": 33,
+        "reduction": 0}
+    ,
+    "3":{
+        "name" : "GE WR30X10093 Refrigerator Icemaker Kit",
+        "type" : "ice maker",
+        "brand" : "GE",
+        "size" : "9.62 x 5.25 x 5.5 inches",
+        "color" : "White",
+        "price" : 21702,
+        "number of doors": 0,
+        "features" : [
+
+        ],
+        "number in stock" : 34,
+        "reduction" : 0
+    },
+    "4":{
+        "name" : "HapiLeap Egg Holder for Fridge Stackable Egg Storage Container for Refrigerator Door Stores 30 Eggs Space Saver (1 Pack)",
+        "type" : "egg tray",
+        "brand" : "HapiLeap",
+        "size" : "10.39 x 8.11 x 4.61 inches",
+        "color" : "White",
+        "price" : 2184,
+        "number of doors": 0,
+        "features" : [
+
+        ],
+        "number in stock" : 45,
+        "reduction" : 0
+    }
+    ,
+    "5":{
+        "name": "LG AAP73631603 Refrigerator Door Shelf Bin",
+        "type": "door shelf",
+        "brand": "LG",
+        "size": "14 x 5 x 4 inches",
+        "color": "White",
+        "price": 2330,
+        "number of doors": 0,
+        "features": [
+          
+        ],
+        "number in stock": 38,
+        "reduction": 0}
+    ,
+    "6":{
+        "name": "Frigidaire EPTWFU01 Water Filtration Filter",
+        "type": "water filter",
+        "brand": "Frigidaire",
+        "size": "1.75 x 1.75 x 9 inches",
+        "color": "White",
+        "price": 7137,
+        "number of doors": 0,
+        "features": [
+          
+        ],
+        "number in stock": 35,
+        "reduction": 0}
+    ,
+    "7":{
+        "name": "Frigidaire 242252702 Water Valve For Refrigerator",
+        "type": "water valve",
+        "brand": "Frigidaire",
+        "size": "1.5 x 2.5 x 3.5 inches",
+        "color": "Blue",
+        "price": 6117,
+        "number of doors": 0,
+        "features": [
+          
+        ],
+        "number in stock": 23,
+        "reduction": 0},
+    "8":{
+        "name": "Frigidaire FRIGCOMBO ULTRAWF Water Filter & PAULTRA Air Filter Combo Pack",
+        "type": "water filter",
+        "brand": "Frigidaire",
+        "size": "11.75 x 4.25 x 7.25 inches",
+        "color": "NA",
+        "price": 8010,
+        "number of doors": 0,
+        "features": [
+            
+        ],
+        "number in stock": 46,
+        "reduction": 0},
+    "9":{
+        "name": "240380301 - Kenmore Aftermarket Replacement Refrigerator Water Valve",
+        "type": "water valve",
+        "brand": "Kenmore",
+        "size": "6 x 6 x 6 inches",
+        "color": "NA",
+        "price": 2184,
+        "number of doors": 0,
+        "features": [
+          
+        ],
+        "number in stock": 57,
+        "reduction": 0},
+    "10":{
+        "name": "Frigidaire 240351207 Crisper Drawer Refrigerator",
+        "type": "fridge drawer",
+        "brand": "Frigidaire",
+        "size": "16.75 x 8.5 x 16.25 inches",
+        "color": "Clear",
+        "price": 1456,
+        "number of doors": 0,
+        "features": [
+            
+        ],
+        "number in stock": 51,
+        "reduction": 0}
+    ,
+    "11":{
+        "name": "Avantco A-49R-HC 54 Solid Door Reach-In Refrigerator",
+        "type": "column fridge",
+        "brand": "Avantco",
+        "size": "extra large",
+        "color": "Silver",
+        "price": 393120,
+        "number of doors": 2,
+        "features": [
+            
+        ],
+        "number in stock": 48,
+        "reduction": 0}
+    ,
+    "12":{
+        "name": "Insignia™ - 7 Cu. Ft. Upright Freeze",
+        "type": "upright freezer",
+        "brand": "Insignia",
+        "size": "small",
+        "color": "White",
+        "price": 46463,
+        "number of doors": 1,
+        "features": [
+            
+        ],
+        "number in stock": 37,
+        "reduction": 0}
+    ,
+    "13":{
+        "name": "Frigidaire 240324502 Frigidare Door Shelf Bin Unit",
+        "type": "door shelf",
+        "brand": "Frigidaire",
+        "size": "13 x 5 x 6.5 inches",
+        "color": "Clear",
+        "price": 7719,
+        "number of doors": 0,
+        "features": [
+          
+        ],
+        "number in stock": 35,
+        "reduction": 0}
+    ,
+    "14":{
+        "name": "Westinghouse 619L Side By Side Fridge with Water Dispenser",
+        "type": "side by side",
+        "brand": "Westinghouse",
+        "size": "large",
+        "color": "Black",
+        "price": 320504,
+        "number of doors": 2,
+        "features": [
+            "water dispenser"
+        ],
+        "number in stock": 39,
+        "reduction": 0}
+}
